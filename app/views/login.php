@@ -36,7 +36,7 @@
                             <button type="submit" class="btn btn-login text-white">Entrar</button>
                         </form>
                         <div class="link-container">
-                            <a href="#" class="text-decoration-none">Criar conta</a> |
+                            <a href="app/views/user/add.php" class="text-decoration-none">Criar conta</a> |
                             <a href="#" class="text-decoration-none">Recuperar senha</a>
                         </div>
                     </div>
