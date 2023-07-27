@@ -1,0 +1,562 @@
+[19-Jul-2023 03:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 03:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 04:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 04:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 05:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 05:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 06:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 06:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 07:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 07:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 08:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 08:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 09:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 09:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 10:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 10:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:40:42 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:40:42 UTC] PHP Warning:  foreach() argument must be of type array|object, string given in /var/www/html/atreito/app/models/User.php on line 28
+[19-Jul-2023 11:40:43 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:44:45 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:44:45 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:46:33 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:46:33 UTC] PHP Fatal error:  Uncaught Error: Class "User" not found in /var/www/html/atreito/app/models/User.php:18
+Stack trace:
+#0 /var/www/html/atreito/test-database.php(3): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/app/models/User.php on line 18
+[19-Jul-2023 11:46:33 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:48:53 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:48:53 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:49:16 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 11:49:16 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:12:17 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:12:17 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:19:32 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:19:32 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:21:37 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:37:42 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:37:42 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 12:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:07:32 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:07:32 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:09:55 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:09:55 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:18:39 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:18:40 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:36:15 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:36:15 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:36:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:36:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:38:43 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:38:43 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:40:07 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:40:08 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:41:22 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:41:22 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:31 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:31 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:33 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:33 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:33 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:35 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:37 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:39 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:39 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:41 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:42:44 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:43:56 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:43:59 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:45:49 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:45:49 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:53:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:53:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:53:03 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:53:03 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:54:21 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:54:21 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:55:03 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 13:55:03 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:03:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:15:14 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:15:14 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:18:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:27 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:27 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:27 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:27 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:19:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:30 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:30 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:37 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:37 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:21:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:26:05 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:26:06 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:28:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:28:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:32:49 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:32:50 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:38:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:38:28 UTC] PHP Warning:  require_once(User.php): Failed to open stream: No such file or directory in /var/www/html/atreito/test-database.php on line 2
+[19-Jul-2023 14:38:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.:/usr/share/php') in /var/www/html/atreito/test-database.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 2
+[19-Jul-2023 14:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:39:16 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:39:16 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:39:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:39:16 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:39:40 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:39:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:39:57 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:39:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:40:36 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:40:36 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:40:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:40:37 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:40:37 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:40:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:40:43 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:40:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:40:43 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:40:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:40:45 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:40:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:40:47 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:40:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:41:46 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:42:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:42:05 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:42:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method User::getUser() in /var/www/html/atreito/test-database.php:30
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 30
+[19-Jul-2023 14:48:48 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:48:48 UTC] PHP Warning:  require_once(User.php): Failed to open stream: No such file or directory in /var/www/html/atreito/test-database.php on line 2
+[19-Jul-2023 14:48:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'User.php' (include_path='.:/usr/share/php') in /var/www/html/atreito/test-database.php:2
+Stack trace:
+#0 /var/www/html/atreito/index.php(4): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/test-database.php on line 2
+[19-Jul-2023 14:49:53 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:49:53 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 14:49:54 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 14:49:54 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 15:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 15:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:16:20 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:16:20 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 16:16:21 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:16:21 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 16:18:48 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:18:48 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:19:12 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:29:55 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:29:55 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:30:24 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:32:11 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:32:11 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:32:37 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:37:59 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:38:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:38:04 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:45:42 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:45:42 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:46:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:47:04 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:47:04 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:47:35 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:50:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:50:29 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:50:29 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:50:58 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:50:58 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:51:22 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:52:06 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:52:11 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:52:12 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:52:27 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:53:35 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:53:35 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:53:54 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:54:35 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 16:54:35 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[19-Jul-2023 16:54:35 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 17:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 17:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 18:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 18:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 19:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 19:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 20:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 20:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 21:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 21:39:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 22:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 22:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:17 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:21 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:22 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:22 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:22 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[19-Jul-2023 23:49:48 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 00:09:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 00:39:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 01:09:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 01:39:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 02:09:04 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 02:39:04 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 03:09:04 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 03:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 04:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 04:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 05:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 05:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 06:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 06:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 07:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 07:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 08:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 08:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 09:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 09:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 10:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 10:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 11:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 11:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 12:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 12:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 13:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 13:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 14:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 14:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 15:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 15:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 16:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 16:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 17:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 17:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 18:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 18:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:06:10 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:06:10 UTC] PHP Warning:  Undefined variable $dbConnection in /var/www/html/atreito/test-database.php on line 5
+[20-Jul-2023 19:06:11 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:07:26 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:07:49 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:07:49 UTC] PHP Warning:  require_once(/var/www/html/atreito/app/views/user/app/controllers/UserController.php): Failed to open stream: No such file or directory in /var/www/html/atreito/app/views/user/add-test.php on line 2
+[20-Jul-2023 19:07:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/atreito/app/views/user/app/controllers/UserController.php' (include_path='.:/usr/share/php') in /var/www/html/atreito/app/views/user/add-test.php:2
+Stack trace:
+#0 /var/www/html/atreito/index.php(3): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/app/views/user/add-test.php on line 2
+[20-Jul-2023 19:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:09:10 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:09:11 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:52:08 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:52:08 UTC] PHP Warning:  require_once(path/to/UserController.php): Failed to open stream: No such file or directory in /var/www/html/atreito/app/views/user/add.php on line 3
+[20-Jul-2023 19:52:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'path/to/UserController.php' (include_path='.:/usr/share/php') in /var/www/html/atreito/app/views/user/add.php:3
+Stack trace:
+#0 /var/www/html/atreito/index.php(3): require_once()
+#1 {main}
+  thrown in /var/www/html/atreito/app/views/user/add.php on line 3
+[20-Jul-2023 19:53:56 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:53:56 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:54:36 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 19:54:38 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 20:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[20-Jul-2023 20:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 02:07:58 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 02:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 02:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 03:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 03:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 04:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 04:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 05:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 05:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 06:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 06:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 07:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 07:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 08:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 08:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 09:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 09:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 10:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 10:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 11:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 11:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 12:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 12:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 13:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 13:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 14:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 14:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 15:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 15:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:32:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:32:24 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:33:10 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:34:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:34:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:34:41 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:35:14 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:55:09 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:55:09 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:55:12 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 16:55:12 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:40:49 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:40:49 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:41:23 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:48:19 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:48:19 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:49:58 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:49:58 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:50:32 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:50:32 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:54:12 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:54:12 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:54:39 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:55:40 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:55:40 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:56:36 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 17:56:37 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 18:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 18:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 19:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 19:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 20:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 20:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 21:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 21:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 22:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 22:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 23:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[22-Jul-2023 23:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 00:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 00:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 01:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 01:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 02:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 02:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 03:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 03:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 04:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 04:39:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 05:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 05:39:20 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 06:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 06:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 07:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 07:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 08:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 08:39:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 09:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 09:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 10:09:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 10:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 11:09:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 11:39:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 12:09:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 12:39:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 13:09:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 13:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 14:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 14:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 15:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 15:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 16:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 16:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 17:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 17:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 18:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 18:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 19:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 19:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 20:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 20:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 21:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 21:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 22:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 22:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 23:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[23-Jul-2023 23:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 00:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 00:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 01:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 01:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 02:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 02:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 03:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 03:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 04:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 04:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 05:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 05:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 06:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 06:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 07:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 07:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 08:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 08:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 09:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 09:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 10:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 10:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 11:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 11:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 12:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 12:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 13:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 13:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 14:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 14:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 15:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 15:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 16:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 16:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 17:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 17:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 18:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 18:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 19:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 19:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 20:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 20:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 21:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 21:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 22:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 22:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 23:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[24-Jul-2023 23:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 00:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 00:39:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 01:09:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 01:39:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 02:09:02 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 02:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 03:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 03:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 04:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 04:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 05:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 05:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 06:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 06:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 07:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 07:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 08:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 08:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 09:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 09:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 10:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 10:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 11:09:00 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 11:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 12:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 12:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 13:05:13 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 13:05:14 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 13:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 13:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 14:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 14:39:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[25-Jul-2023 15:09:01 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 09:58:10 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 12:58:31 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:07:15 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:07:16 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:08:36 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:09:28 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:09:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:09:35 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:09:42 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[27-Jul-2023 13:09:44 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).

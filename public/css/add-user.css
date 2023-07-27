@@ -1,0 +1,79 @@
+body {
+    background-color: #556b2f;
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-user-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-control {
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-add-user {
+    background-color: #556b2f;
+    border-color: #556b2f;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #fff;
+    display: block;
+}
+
+.btn-add-user:hover {
+    background-color: #364614;
+    border-color: #364614;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.icon-check {
+    color: green;
+    margin-left: 5px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-6 {
+    padding-right: 15px;
+    padding-left: 15px;
+}
