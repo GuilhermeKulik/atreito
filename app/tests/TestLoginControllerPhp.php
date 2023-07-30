@@ -6,24 +6,25 @@ $testData = [
     'password' => 'senha123'
 ];
 
-// Configurar os parâmetros da requisição
-$options = [
-    'http' => [
-        'method' => 'POST',
-        'header' => 'Content-type: application/x-www-form-urlencoded',
-        'content' => http_build_query($testData),
-        'timeout' => 10 // Adicione um timeout de 10 segundos
-    ]
-];
+// Configurar os parâmetros da requisição cURL
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'http://localhost:8080/app/controllers/LoginController.php');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($testData));
 
-// Fazendo a requisição para o UserController
-$context = stream_context_create($options);
-$response = @file_get_contents('http://localhost:8080/app/controllers/LoginController.php', false, $context);
+// Executar a requisição cURL e capturar a resposta
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-// Verificar se houve algum erro na requisição
+// Verificar se houve algum erro na requisição cURL
 if ($response === false) {
-    echo 'Error: ' . error_get_last()['message'];
-} else {
-    // Exibindo o resultado na tela
-    echo 'Response: ' . $response;
+    echo 'cURL Error: ' . curl_error($ch);
 }
+
+// Fechar a sessão cURL
+curl_close($ch);
+
+// Exibir o resultado na tela
+echo 'HTTP Code: ' . $httpCode . '<br>';
+echo 'Response: ' . $response;

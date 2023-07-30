@@ -19,32 +19,34 @@ class LoginController
             if (!isset($_POST['email']) || !isset($_POST['password'])) {
                 $this->redirectToLoginWithError('Por favor, preencha todos os campos.');
             }
-
+    
             $email = $_POST['email'];
             $password = $_POST['password'];
-
+    
             $userData = $this->userModel->getUserByEmail($email);
-
+    
             if ($userData && password_verify($password, $userData['password'])) {
-                // Login bem-sucedido, redirecionar para a página principal (/index)
+                // Login bem-sucedido, redirecionar para a página principal (/dashboard)
                 header('Location: /dashboard');
                 exit();
             } else {
-                // Credenciais inválidas, exibir mensagem de erro
-                $errorMessage = 'Credenciais inválidas.';
-                $this->redirectToLoginWithError($errorMessage);
+                // Credenciais inválidas, exibir mensagem de erro na página de login
+                $this->redirectToLoginWithError('Credenciais inválidas. Por favor, tente novamente.');
             }
         } else {
             // Exibir a página de login
-            $errorMessage = isset($_GET['error']) ? $_GET['error'] : '';
-            require_once __DIR__ . '/../views/login.php';
+            $this->renderLoginView();
         }
     }
 
     private function redirectToLoginWithError($errorMessage)
     {
-        $url = '/app/views/login.php?error=' . urlencode($errorMessage);
-        header('Location: ' . $url);
+        header('Location: /app/views/login.php?error=' . urlencode($errorMessage));
         exit();
+    }
+
+    private function renderLoginView($errorMessage = null)
+    {
+        require_once __DIR__ . '/../views/login.php';
     }
 }

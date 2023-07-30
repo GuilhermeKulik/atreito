@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,15 +19,14 @@
                         <h5 class="card-title">Login</h5>
 
                         <!-- Elemento reservado para a mensagem de erro -->
-                        <?php if (isset($_GET['error']) && !empty($_GET['error'])) : ?>
+                        <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) : ?>
                             <div id="error-message" class="alert alert-danger" role="alert">
-                                <?php echo $_GET['error']; ?>
+                                <?php echo $_SESSION['error']; ?>
                             </div>
-                        <?php else : ?>
-                            <div id="error-message" class="alert alert-danger" role="alert" style="display: none;"></div>
-                        <?php endif; ?>
+                            <?php unset($_SESSION['error']); ?>
 
-                        <form id="login-form" action="/app/controllers/UserController.php" method="POST">
+
+                        <form id="login-form" method="POST">
                             <div class="mb-3">
                                 <label for="login" class="form-label">Usuário</label>
                                 <input type="text" class="form-control" id="login" name="email" placeholder="Digite seu usuário">

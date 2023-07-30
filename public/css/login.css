@@ -66,3 +66,14 @@ body {
     margin: 0 5px;
     text-decoration: none;
 }
+
+/* Estilo para a caixa de erro */
+.alert-danger {
+    display: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f00;
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
