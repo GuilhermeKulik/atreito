@@ -1,61 +1,40 @@
-// ERROR BOX
-
-$(document).ready(function() {
-    var errorMessage = $('#error-message');
-    var errorMessageText = errorMessage.text().trim(); // Obter o texto da mensagem de erro e remover espaços em branco
-
-    // Verificar se a mensagem de erro está presente e não está vazia
-    if (errorMessage.length > 0 && errorMessageText !== '') {
-        errorMessage.show(); // Exibir a mensagem de erro
-        setTimeout(function() {
-            errorMessage.slideUp('slow'); // Ocultar a mensagem de erro após 10 segundos
-        }, 10000);
-    }
-});
-
-// FORMULÁRIO 
-
-$(document).ready(function() {
-    $('#login-form').submit(function(e) {
-        e.preventDefault(); // Evita o envio do formulário padrão
-
-        var form = $(this);
-        var url = form.attr('action');
-        var formData = form.serialize();
-
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: formData,
-            dataType: 'json',
-            success: function(response) {
-                // Sucesso na resposta da requisição AJAX
-                if (response.success) {
-                    // Login bem-sucedido, redirecionar para a página principal (/index)
-                    window.location.href = '/index';
-                } else {
-                    // Credenciais inválidas, exibir mensagem de erro
-                    var errorMessage = response.message;
-                    showErrorMessage(errorMessage);
-                }
-            },
-            error: function() {
-                // Erro na requisição AJAX
-                var errorMessage = 'Ocorreu um erro ao processar a solicitação. Por favor, tente novamente mais tarde.';
-                showErrorMessage(errorMessage);
-            }
-        });
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que o formulário seja enviado normalmente
+  
+    // Obter os valores dos campos de e-mail e senha
+    var email = document.getElementById('login').value;
+    var password = document.getElementById('password').value;
+  
+    // Montar os dados a serem enviados na requisição AJAX
+    var data = {
+      email: email,
+      password: password
+    };
+  
+    // Fazer a requisição AJAX
+    $.ajax({
+      url: '/app/controllers/LoginController.php',
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function(response) {
+        // Aqui você pode adicionar o código para tratar a resposta do servidor
+        // Por exemplo, verificar se o login foi bem-sucedido ou exibir uma mensagem de erro
+        if (response.success) {
+          window.location.href = '/index';
+        } else {
+          displayError('Credenciais inválidas. Por favor, tente novamente.');
+        }
+      },
+      error: function() {
+        displayError('Erro na requisição. Por favor, tente novamente.');
+      }
     });
-
-    function showErrorMessage(message) {
-        var errorMessageElement = $('#error-message');
-        errorMessageElement.text(message);
-        errorMessageElement.show();
-
-        // Após 10 segundos, ocultar a mensagem de erro
-        setTimeout(function() {
-            errorMessageElement.hide();
-        }, 10000);
-    }
-});
-
+  });
+  
+  function displayError(message) {
+    var errorDiv = document.getElementById('error-message');
+    errorDiv.style.display = 'block';
+    errorDiv.textContent = message;
+  }
+  
