@@ -1,12 +1,27 @@
-<?php
+
+<?php 
+
+if (!isset($_SESSION)) {
 session_start();
+} 
+
+require_once __DIR__ . '/../../app/controllers/LoginController.php';
+$loginController = new LoginController();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $loginController->login();
+}
+
+$currentPath = $_SERVER['REQUEST_URI'];
+$basePath = str_replace('/app/views/login.php', '', $currentPath); // Atualize de acordo com o caminho correto
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/css/login.css">
+    <link rel="stylesheet" href="<?php echo $basePath; ?>/public/css/login.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -18,13 +33,12 @@ session_start();
                     <div class="card">
                         <h5 class="card-title">Login</h5>
 
-                        <!-- Elemento reservado para a mensagem de erro -->
-                        <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) : ?>
-                            <div id="error-message" class="alert alert-danger" role="alert">
-                                <?php echo $_SESSION['error']; ?>
+                        <!-- Exibir a mensagem de erro se presente na URL -->
+                        <?php if ($error) : ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo urldecode($error); ?>
                             </div>
-                            <?php unset($_SESSION['error']); ?>
-
+                        <?php endif; ?>
 
                         <form id="login-form" method="POST">
                             <div class="mb-3">
@@ -38,7 +52,7 @@ session_start();
                             <button type="submit" class="btn btn-login text-white">Entrar</button>
                         </form>
                         <div class="link-container">
-                            <a href="app/views/user/add.php" class="text-decoration-none">Criar conta</a> |
+                            <a href="<?php echo $basePath; ?>/app/views/user/add.php" class="text-decoration-none">Criar conta</a> |
                             <a href="#" class="text-decoration-none">Recuperar senha</a>
                         </div>
                     </div>
@@ -47,7 +61,7 @@ session_start();
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/public/js/login.js"></script>
+    <script src="<?php echo $basePath; ?>/public/js/login.js"></script>
     <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

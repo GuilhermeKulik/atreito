@@ -45,8 +45,9 @@ class UserController
                 $userId = $this->userModel->createUser($userData);
     
                 if ($userId) {
-                    // Usuário adicionado com sucesso
-                    echo 'success';
+                    $m = "Usuario cadastrado com sucesso.";
+                    $alertClass = 'success';
+                    $this->redirectToAddUser($m, $alertClass);
                     exit();
                 } else {
                     // Erro ao adicionar usuário
@@ -55,27 +56,29 @@ class UserController
                 }
             } catch (Exception $e) {
                 // Tratar a exceção
-                $errorMessage = 'Ocorreu um erro ao processar a solicitação: ' . $e->getMessage();
-                $this->redirectToAddUserWithError($errorMessage);
+                $m = 'Ocorreu um erro ao processar a solicitação: ' . $e->getMessage();
+                $alertClass = 'danger';
+                $this->redirectToAddUser($m, $alertClass);
             }
         } else {
             // Exibir o formulário de adição de usuário
-            require_once __DIR__ . '/../views/add-user.php';
+            require_once __DIR__ . '/../views/add.php';
         }
     }
     
 
-    private function redirectToLoginWithError($errorMessage)
+    private function redirectToLoginWithError($m)
     {
-        $url = '/app/views/login.php?error=' . urlencode($errorMessage);
+        $url = '/app/views/login.php?m=' . urlencode($m);
         header('Location: ' . $url);
         exit();
     }
 
-    private function redirectToAddUserWithError($errorMessage)
+    private function redirectToAddUser($m, $alertClass)
     {
-        $url = '/app/views/add-user.php?error=' . urlencode($errorMessage);
+        $url = '/app/views/user/add.php?m=' . urlencode($m) . '&a=' . urlencode($alertClass);
         header('Location: ' . $url);
         exit();
     }
+
 }

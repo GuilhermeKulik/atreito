@@ -5,16 +5,21 @@ $userController = new UserController();
 
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Chama o método addUser() do UserController
+    // chama addUser() -> UserController
     $userController->addUser();
 }
+
+// pega o erro da url
+$m = isset($_GET['m']) ? urldecode($_GET['m']) : null;
+$alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Adicionar Usuário</title>
-    <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/add-user.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -27,10 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="card">
                         <h5 class="card-title">Adicionar Usuário</h5>
 
-                        <!-- Elemento reservado para a mensagem de erro -->
-                        <div id="error-message" class="alert alert-danger" role="alert" style="display: none;"></div>
+                        <!-- Mensagem de erro -->
+                        <?php if ($m) : ?>
+                            <div class="alert alert-<?php echo $alertClass?>" role="alert">
+                                <?php echo $m; ?>
+                                <?php $m = null; ?>
+                            </div>
+                        <?php endif; ?>
 
-                        <form id="userForm" action="app/views/user/add.php" method="POST">
+                        <form id="userForm"  method="POST">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -115,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/public/js/validation.js"></script>
 </body>
 </html>
