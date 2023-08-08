@@ -22,8 +22,12 @@ public function createUser($data)
         }
 
         // Verifica os campos obrigatórios antes de realizar a criação do usuário
-        if (empty($data['name']) || empty($data['email']) || empty($data['userType']) || empty($data['phone'])) {
-            throw new Exception("Erro. Preencha todos os campos obrigatórios.");
+        if (empty($data['name']) || empty($data['email']) || empty($data['userType']) || empty($data['phone'])) {       
+            $m = "ERRO!<br>Preencha todos os campos obrigatórios e tente novamente.";
+            $alertClass = 'danger';
+            $url = '/app/views/user/add.php?m=' . urlencode($m) . '&a=' . urlencode($alertClass);
+            header('Location: ' . $url);
+            exit();
         }
 
         // Verifica se o email já está em uso

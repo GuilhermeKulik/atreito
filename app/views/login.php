@@ -12,16 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $loginController->login();
 }
 
-$currentPath = $_SERVER['REQUEST_URI'];
-$basePath = str_replace('/app/views/login.php', '', $currentPath); // Atualize de acordo com o caminho correto
+$m = isset($_GET['m']) ? urldecode($_GET['m']) : null;
+$alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $basePath; ?>/public/css/login.css">
+    <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/login.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -34,9 +34,10 @@ $basePath = str_replace('/app/views/login.php', '', $currentPath); // Atualize d
                         <h5 class="card-title">Login</h5>
 
                         <!-- Exibir a mensagem de erro se presente na URL -->
-                        <?php if ($error) : ?>
-                            <div class="alert alert-danger" role="alert">
-                                <?php echo urldecode($error); ?>
+                        <?php if ($m) : ?>
+                            <div class="alert alert-<?php echo $alertClass?>" role="alert">
+                                <?php echo $m; ?>
+                                <?php $m = null; ?>
                             </div>
                         <?php endif; ?>
 
@@ -62,6 +63,6 @@ $basePath = str_replace('/app/views/login.php', '', $currentPath); // Atualize d
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo $basePath; ?>/public/js/login.js"></script>
-    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

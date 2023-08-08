@@ -45,7 +45,7 @@ class UserController
                 $userId = $this->userModel->createUser($userData);
     
                 if ($userId) {
-                    $m = "Usuario cadastrado com sucesso.";
+                    $m = "Usuário cadastrado com sucesso.";
                     $alertClass = 'success';
                     $this->redirectToAddUser($m, $alertClass);
                     exit();

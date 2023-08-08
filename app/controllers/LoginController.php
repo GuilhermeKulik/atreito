@@ -17,7 +17,7 @@ class LoginController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Verificar se os campos de e-mail e senha foram enviados
             if (!isset($_POST['email']) || !isset($_POST['password'])) {
-                $this->redirectToLoginWithError('Por favor, preencha todos os campos.');
+                $this->redirectToLogin('Por favor, preencha todos os campos.','danger');
             }
     
             $email = $_POST['email'];
@@ -31,7 +31,7 @@ class LoginController
                 exit();
             } else {
                 // Credenciais inválidas, exibir mensagem de erro na página de login
-                $this->redirectToLoginWithError('Credenciais inválidas. Por favor, tente novamente.');
+                $this->redirectToLogin('Credenciais inválidas. Por favor, tente novamente.', 'danger');
             }
         } else {
             // Exibir a página de login
@@ -39,14 +39,10 @@ class LoginController
         }
     }
 
-    private function redirectToLoginWithError($errorMessage)
+    private function redirectToLogin($m, $alertClass)
     {
-        header('Location: /app/views/login.php?error=' . urlencode($errorMessage));
+        $url = '/app/views/login.php?m=' . urlencode($m) . '&a=' . urlencode($alertClass);
+        header('Location: ' . $url);
         exit();
-    }
-
-    private function renderLoginView($errorMessage = null)
-    {
-        require_once __DIR__ . '/../views/login.php';
     }
 }
