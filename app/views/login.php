@@ -1,8 +1,12 @@
 
 <?php 
-
-if (!isset($_SESSION)) {
-session_start();
+// Verifica se está logado e redireciona, caso contrário cria sessão
+if (!isset($_SESSION['user'])) {
+  session_start();
+}
+else {
+  header('Location: /app/views/dashboard.php');
+  exit();
 } 
 
 require_once __DIR__ . '/../../app/controllers/LoginController.php';

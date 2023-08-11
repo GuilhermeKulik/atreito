@@ -29,7 +29,7 @@ class LoginController
                 // Armazenar os dados do usuário na variável de sessão 'user'
                 $_SESSION['user'] = $userData;
                 // Login bem-sucedido, redirecionar para a página principal (/dashboard)
-                header('Location: /dashboard');
+                header('Location: /app/views/dashboard.php');
                 exit();
             } else {
                 // Credenciais inválidas, exibir mensagem de erro na página de login
