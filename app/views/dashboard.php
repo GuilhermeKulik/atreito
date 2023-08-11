@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
         </div>
         <!-- Conteúdo -->
         <div class="content">
-            <h3> Olá <?php ucfirst($_SESSION['user']['name']);?>, bem vindo de volta.
+            <h2> Olá <?php echo $_SESSION['user']['name'];?>, bem vindo de volta.
         </div>
     </div>
 </body>
