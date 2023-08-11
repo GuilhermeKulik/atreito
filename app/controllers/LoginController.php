@@ -26,6 +26,8 @@ class LoginController
             $userData = $this->userModel->getUserByEmail($email);
     
             if ($userData && password_verify($password, $userData['password'])) {
+                // Armazenar os dados do usuário na variável de sessão 'user'
+                $_SESSION['user'] = $userData;
                 // Login bem-sucedido, redirecionar para a página principal (/dashboard)
                 header('Location: /dashboard');
                 exit();
