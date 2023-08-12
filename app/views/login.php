@@ -1,16 +1,10 @@
 
 <?php 
-// Verifica se está logado e redireciona, caso contrário cria sessão
-if (!isset($_SESSION['user'])) {
-  session_start();
-}
-else {
-  header('Location: /app/views/dashboard.php');
-  exit();
-} 
 
 require_once __DIR__ . '/../../app/controllers/LoginController.php';
 $loginController = new LoginController();
+
+$loginController->checkLogin();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $loginController->login();
@@ -57,7 +51,7 @@ $alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
                             <button type="submit" class="btn btn-login text-white">Entrar</button>
                         </form>
                         <div class="link-container">
-                            <a href="<?php echo $basePath; ?>/app/views/user/add.php" class="text-decoration-none">Criar conta</a> |
+                            <a href="/app/views/user/add.php" class="text-decoration-none">Criar conta</a> |
                             <a href="#" class="text-decoration-none">Recuperar senha</a>
                         </div>
                     </div>

@@ -28,6 +28,7 @@ class LoginController
             if ($userData && password_verify($password, $userData['password'])) {
                 // Armazenar os dados do usuário na variável de sessão 'user'
                 $_SESSION['user'] = $userData;
+                $_SESSION['user']['password'] = '';
                 // Login bem-sucedido, redirecionar para a página principal (/dashboard)
                 header('Location: /app/views/dashboard.php');
                 exit();
@@ -45,6 +46,22 @@ class LoginController
     {
         $url = '/app/views/login.php?m=' . urlencode($m) . '&a=' . urlencode($alertClass);
         header('Location: ' . $url);
+        exit();
+    }
+
+    public function checkLogin() {
+        if (!isset($_SESSION['user'])) {
+            session_start();
+          }
+          else {
+            header('Location: /app/views/login.php');
+            exit();
+          }
+    }
+
+    public function logout() {
+        session_destroy();
+        header('Location: /app/views/login.php');
         exit();
     }
 }

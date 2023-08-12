@@ -29,12 +29,12 @@ if (!isset($_SESSION['user'])) {
                 <li><a href="#">Pontos</a></li>
                 <li><a href="#">Clientes</a></li>
                 <li><a href="#">Configurações</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/logout.php">Logout</a></li>
             </ul>
         </div>
         <!-- Conteúdo -->
         <div class="content">
-            <h2> Olá <?php echo $_SESSION['user']['name'];?>, bem vindo!
+            <h2> Olá <?= $_SESSION['user']['name']; ?>,, bem vindo!
         </div>
     </div>
 </body>

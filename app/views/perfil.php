@@ -31,7 +31,7 @@ $user = $_SESSION['user'];
                 <li><a href="#">Pontos</a></li>
                 <li><a href="#">Clientes</a></li>
                 <li><a href="#">Configurações</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/logout.php">Logout</a></li>
             </ul>
         </div>
         <!-- Conteúdo -->
