@@ -3,7 +3,8 @@ session_start();
 
 // Verifica se está logado para evitar acesso indesejado
 if (!isset($_SESSION['user'])) {
-  throw new Exception('Acesso restrito.');
+    header('Location: /app/views/login.php');
+    exit();
 }
 
 ?>

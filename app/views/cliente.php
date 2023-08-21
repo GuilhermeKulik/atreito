@@ -1,28 +1,34 @@
-
 <?php 
+require_once __DIR__ . '/../../app/views/components/header.php';
+require_once __DIR__ . '/../../app/views/components/menu-lateral.php';
+require_once __DIR__ . '/../../app/controllers/ClienteController.php';
 
-require_once('components/header.php');
-require_once('components/menu-lateral.php');
+$clienteController = new ClienteController();
+
+// Verifica se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $clienteController->addCliente();
+}
+
+// Pega o erro da url via get
+$m = isset($_GET['m']) ? urldecode($_GET['m']) : null;
+$alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
 
 ?>
 
-            <h2>Adicionar Cliente</h2>
-            <form id="clienteForm" class="p-4 border rounded needs-validation" novalidate method="POST" action="#">
+            
+            <form id="clienteForm" class="p-4 border rounded needs-validation" novalidate method="POST">
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
+                    <label for="nome" class="form-label">Nome*</label>
                     <input type="text" class="form-control" id="nome" name="nome" required>
                 </div>
                 <div class="mb-3">
-                    <label for="codigo_usuario" class="form-label">Código de Usuário</label>
-                    <input type="text" class="form-control" id="codigo_usuario" name="codigo_usuario" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">E-mail</label>
+                    <label for="email" class="form-label">E-mail*</label>
                     <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="mb-3">
-                    <label for="celular" class="form-label">Celular</label>
-                    <input type="tel" class="form-control" id="celular" name="celular" pattern="[0-9]{2} [0-9]{2} [0-9]{9}" placeholder="+55 00 000000000">
+                    <label for="celular" class="form-label">Celular* (DDD + NÚMERO)</label>
+                    <input type="tel" class="form-control" id="celular" name="celular" pattern="[0-9]{2} [0-9]{2} [0-9]{9}" placeholder="XXXXXXXXXXX">
                 </div>
                 <div class="mb-3">
                     <label for="data_nascimento" class="form-label">Data de Nascimento</label>
@@ -31,6 +37,18 @@ require_once('components/menu-lateral.php');
                 <div class="mb-3">
                     <label for="endereco" class="form-label">Endereço</label>
                     <input type="text" class="form-control" id="endereco" name="endereco">
+                </div>
+                <div class="mb-3">
+                    <label for="endereco_numero" class="form-label">Número</label>
+                    <input type="number" class="form-control" id="endereco_numero" name="endereco_numero">
+                </div>
+                <div class="mb-3">
+                    <label for="endereco_complemento" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="endereco_complemento" name="endereco_complemento">
+                </div>
+                <div class="mb-3">
+                    <label for="bairro" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" name="bairro">
                 </div>
                 <div class="mb-3">
                     <label for="genero" class="form-label">Gênero</label>

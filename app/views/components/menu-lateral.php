@@ -16,3 +16,5 @@
                 </div>
                 <!-- Conteúdo -->
                 <div class="content">
+                                            <!-- Mensagem de erro -->
+                                            <?php require_once('errorBox.php'); ?>

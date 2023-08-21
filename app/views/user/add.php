@@ -33,12 +33,7 @@ $alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
                         <h5 class="card-title">Adicionar Usuário</h5>
 
                         <!-- Mensagem de erro -->
-                        <?php if ($m) : ?>
-                            <div class="alert alert-<?php echo $alertClass?>" role="alert">
-                                <?php echo $m; ?>
-                                <?php $m = null; ?>
-                            </div>
-                        <?php endif; ?>
+                        <?php require_once('/../components/errorBox.php'); ?>
 
                         <form id="userForm"  method="POST">
                             <div class="row">

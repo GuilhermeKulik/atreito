@@ -1,98 +1,71 @@
 <?php
 
+require_once __DIR__ . '/../../config/database.php';
+
 class Cliente
 {
-    private $id;
-    private $nome;
-    private $codigoUsuario;
-    private $email;
-    private $celular;
-    private $dataNascimento;
-    private $pontos;
-    private $ultimoLogin;
+    private $conn;
+    private $table = 'Cliente';
 
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        $db = new Database();
+        $this->conn = $db->getConnection();
     }
 
-    public function setId($id)
+    public function getClienteById($clientId)
     {
-        $this->id = $id;
+        $query = "SELECT * FROM $this->table WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $clientId);
+        $stmt->execute();
     }
 
-    public function getNome()
+    public function getClienteByEmail($email)
     {
-        return $this->nome;
+        $query = "SELECT * FROM $this->table WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function setNome($nome)
+    public function getAll()
     {
-        $this->nome = $nome;
+        $sql = "SELECT * FROM $this->table";
+        return $this->conn->fetchAll($sql);
     }
 
-    public function getCodigoUsuario()
+    public function add()
     {
-        return $this->codigoUsuario;
-    }
 
-    public function setCodigoUsuario($codigoUsuario)
-    {
-        $this->codigoUsuario = $codigoUsuario;
-    }
-
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    public function getCelular()
-    {
-        return $this->celular;
-    }
-
-    public function setCelular($celular)
-    {
-        $this->celular = $celular;
-    }
-
-    public function getDataNascimento()
-    {
-        return $this->dataNascimento;
-    }
-
-    public function setDataNascimento($dataNascimento)
-    {
-        $this->dataNascimento = $dataNascimento;
-    }
-
-    public function getPontos()
-    {
-        return $this->pontos;
-    }
-
-    public function setPontos($pontos)
-    {
-        $this->pontos = $pontos;
-    }
-
-    public function getUltimoLogin()
-    {
-        return $this->ultimoLogin;
-    }
-
-    public function setUltimoLogin($ultimoLogin)
-    {
-        $this->ultimoLogin = $ultimoLogin;
-    }
-
-    public function adicionarPontos($quantidade)
-    {
-    $this->pontos += $quantidade;
+        try {   
+            $query = "INSERT INTO $this->table (nome, email, celular, data_nascimento, endereco_rua, endereco_numero, endereco_complemento, endereco_bairro, endereco_cidade, genero) 
+                      VALUES (:nome, :email, :celular, :data_nascimento, :endereco_rua, :endereco_numero, :endereco_complemento, :endereco_bairro, :endereco_cidade, :genero)";
+            
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':nome', $this->nome);
+            $stmt->bindParam(':email', $this->email);
+            $stmt->bindParam(':celular', $this->celular);
+            $stmt->bindParam(':data_nascimento', $this->dataNascimento);
+            $stmt->bindParam(':endereco_rua', $this->enderecoRua);
+            $stmt->bindParam(':endereco_numero', $this->enderecoNumero);
+            $stmt->bindParam(':endereco_complemento', $this->enderecoComplemento);
+            $stmt->bindParam(':endereco_bairro', $this->enderecoBairro);
+            $stmt->bindParam(':endereco_cidade', $this->enderecoCidade);
+            $stmt->bindParam(':genero', $this->genero);
+    
+            if ($stmt->execute()) {
+                return $this->conn->lastInsertId();
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            // Em caso de erro, capturamos a exceção e a lançamos novamente para ser tratada em outro lugar
+            throw $e;
+        }
     }
 }
+
+
