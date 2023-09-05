@@ -28,6 +28,8 @@ echo "<h1>Testes Model</h1>";
 
 // Testes
 echo "<h3>Testes User</h3>";
+
+// classe USER
 // 1. Inserção de um novo usuário
 $user = new User($conn, 'johndoe@example.com' . rand(1,9999), 'password123', 'John Doe');
 

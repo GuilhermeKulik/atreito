@@ -68,7 +68,13 @@ class User extends GenericModel {
         return $this->dateModified;
     }
 
-    // Métodos
+    // Functions
+
+    /**
+     * Creates a new user in the database.
+     * 
+     * @return int The ID of the newly created user.
+     */
     public function createUser() {
         $data = [
             'email' => $this->email,
@@ -81,6 +87,13 @@ class User extends GenericModel {
         return $this->userID;
     }
 
+    /**
+     * Updates an existing user in the database.
+     * 
+     * @param int $userID The ID of the user to be updated.
+     * @param array $newData New data for update (email, password, name).
+     * @return int Returns the number of rows affected by the operation.
+     */
     public function updateUser($userID, $newData) {
         $data = [];
     
@@ -103,7 +116,12 @@ class User extends GenericModel {
         return parent::update('user', $data, $conditions); 
     }
     
-
+    /**
+     * Deletes a user from the database.
+     * 
+     * @param int $userID The ID of the user to be deleted.
+     * @return int|null Returns the ID of the deleted user if successful, or null if no changes were made.
+     */
     public function deleteUser($userID) {
         $conditions = ['user_id' => $userID];
         $rowsAffected = parent::delete('user', $conditions);
@@ -117,6 +135,13 @@ class User extends GenericModel {
         return null;
     }
 
+    /**
+     * Authenticates a user using email and password.
+     * 
+     * @param string $email User's email.
+     * @param string $password User's password.
+     * @return bool Returns true if successfully authenticated, false otherwise.
+     */
     public function authenticate($email, $password) {
         $conditions = ['email' => $email];
         $user = parent::fetch('user', $conditions); 
@@ -133,10 +158,22 @@ class User extends GenericModel {
         return false;
     }
 
+    /**
+     * Generates a hash of the provided password.
+     * 
+     * @param string $password Password to be hashed.
+     * @return string Returns the hashed password.
+     */
     private function hashPassword($password) {
         return password_hash($password, PASSWORD_DEFAULT);
     }
 
+    /**
+     * Retrieves a user based on the provided ID.
+     * 
+     * @param int $id User's ID.
+     * @return User|null Returns a User object or null if the user isn't found.
+     */
     public function getUserById($id) {
         $userData = parent::fetch('user', ['user_id' => $id]);
 
@@ -153,6 +190,11 @@ class User extends GenericModel {
         return $user;
     }
 
+    /**
+     * Retrieves all users from the database.
+     * 
+     * @return array Returns a list of users.
+     */
     public function getAllUsers() {
         return parent::fetchAll('user');
     }
