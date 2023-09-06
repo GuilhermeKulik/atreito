@@ -1,6 +1,6 @@
 <?php
 
-require_once 'GenericModel.php';
+namespace Atreito\Model;
 
 class User extends GenericModel {
 
@@ -14,12 +14,11 @@ class User extends GenericModel {
 
     // Construtor
     public function __construct($conn, $email = null, $password = null, $name = null) {
-        parent::__construct($conn);
-        
+        parent::__construct($conn);  
         $this->email = $email;
         $this->password = $password ? $this->hashPassword($password) : null;
         $this->name = $name;
-        $this->dateCreated = new DateTime();
+        $this->dateCreated = new \DateTime();
     }
 
     // Getters e Setters

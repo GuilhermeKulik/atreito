@@ -1,6 +1,6 @@
 <?php
 
-namespace Atreito\Config;
+namespace Atreito\Core\Router;
 
 class Routes {
 
@@ -49,6 +49,18 @@ class Routes {
             self::VANTAGENS_CLIENTE_ROUTE => self::VANTAGENS_CLIENTE_VIEW,
             self::LOGS_ROUTE => self::LOGS_VIEW,
             self::LOGOUT_ROUTE => self::LOGOUT_VIEW
+        ];
+    }
+
+    // ROTAS para CONTROLLERS ...
+
+    public static function getControllerRoutes(): array {
+        return [
+            '/login-ajax' => [
+                'class' => 'UserController',
+                'method' => 'loginAjax'
+            ]
+            // outras rotas de controlador aqui conforme necessário
         ];
     }
 }

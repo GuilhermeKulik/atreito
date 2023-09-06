@@ -1,83 +1,113 @@
 <?php
 
-require_once __DIR__ . '/../models/User.php';
+namespace Atreito\Controller;
 
-class UserController
-{
+session_start();
+
+use Atreito\View\GenericView;
+use Atreito\Model\User;
+use Atreito\Config\DBConnection;
+
+class UserController {
+
     private $userModel;
+    private $view;
 
-    public function __construct()
-    {
-        $this->userModel = new User();
+    public function __construct() {
+        $this->userModel = new User(DBConnection::getInstance()->getConnection());
+        $this->view = new GenericView();
     }
+    
 
-    public function addUser()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            try {
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $userType = $_POST['userType'];
-                $password = $_POST['password'];
-                $phone = $_POST['phone'];
-                $address = $_POST['address'];
-                $houseNumber = $_POST['houseNumber'];
-                $bairro = $_POST['bairro'];
-                $cep = $_POST['cep'];
-                $instagram = 'teste';
-    
-                // Preparando os dados do usuário em um array associativo
-                $userData = [
-                    'name' => $name,
-                    'email' => $email,
-                    'userType' => $userType,
-                    'password' => $password,
-                    'phone' => $phone,
-                    'address' => $address,
-                    'houseNumber' => $houseNumber,
-                    'bairro' => $bairro,
-                    'cep' => $cep,
-                    'instagram' => $instagram,
-                ];
-    
-                // Chamar o método createUser() com os dados do usuário
-                $userId = $this->userModel->createUser($userData);
-    
-                if ($userId) {
-                    $m = "Usuário cadastrado com sucesso.";
-                    $alertClass = 'success';
-                    $this->redirectToAddUser($m, $alertClass);
-                    exit();
-                } else {
-                    // Erro ao adicionar usuário
-                    echo 'error';
-                    exit();
-                }
-            } catch (Exception $e) {
-                // Tratar a exceção
-                $m = 'Ocorreu um erro ao processar a solicitação: ' . $e->getMessage();
-                $alertClass = 'danger';
-                $this->redirectToAddUser($m, $alertClass);
-            }
+    public function login($email, $password) {
+        $authSuccess = $this->authenticate($email, $password);
+        
+        if ($authSuccess) {
+            $_SESSION['user'] = [
+                'email' => $this->userModel->getEmail(),
+                'id' => $this->userModel->getUserID(),
+                // Estou assumindo que você tenha um método 'getUserType()' na classe User
+                'type' => $this->userModel->getUserType()
+            ];
+
+            // Redireciona para o dashboard
+            $this->view->renderView('/dashboard');
         } else {
-            // Exibir o formulário de adição de usuário
-            require_once __DIR__ . '/../views/add.php';
+            // Definindo a mensagem de erro na sessão
+            $_SESSION['login_error'] = "Não foi possível realizar o login. Verifique suas credenciais e tente novamente.";
+
+            // Redireciona de volta para a página de login
+            $this->view->renderView('/login');
         }
     }
+
+    public function logout() {
+        unset($_SESSION['user']);
+        $this->view->renderView('/login');
+    }
+
+    public function checkLogin() {
+        if (isset($_SESSION['user'])) {
+            $userType = $_SESSION['user']['type'];
+           
+            // ou retornar o tipo de usuário diretamente (Do jeito que está)
+            return $userType;
+            
+            // ou redirecionar com base no tipo de usuário
+            /*
+            switch ($userType) {
+                case 'admin':
+                    $this->view->renderView('/admin-dashboard');
+                    break;
+                case 'seller':
+                    $this->view->renderView('/seller-dashboard');
+                    break;
+                case 'client':
+                    $this->view->renderView('/client-dashboard');
+                    break;
+                default:
+                    $this->logout();
+            }
+            */
+        } else {
+            $this->view->renderView('/login');
+        }
+    }
+
+    private function authenticate($email, $password) {
+        $conditions = ['email' => $email];
+        $user = $this->userModel->fetch('user', $conditions); 
+        
+        if ($user && password_verify($password, $user['password'])) {
+            $this->userModel->setUserID($user['user_ID']);
+            $this->userModel->setEmail($user['email']);
+            $this->userModel->setPassword($user['password']);
+            $this->userModel->setName($user['name']);
+            // a data de criação e modificação serão definidas dentro do modelo, quando os dados são carregados
+            return true;
+        }
+
+        return false;
+    }
+
+    // retorna um json.
     
-
-    private function redirectToLoginWithError($m)
-    {
-        $url = '/app/views/login.php?m=' . urlencode($m);
-        header('Location: ' . $url);
-        exit();
+    public function loginAjax() {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        
+        $authSuccess = $this->authenticate($email, $password);
+        
+        if ($authSuccess) {
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Erro de autenticação.']);
+        }
+    
+        exit; // Para encerrar a execução após a resposta AJAX.
     }
 
-    private function redirectToAddUser($m, $alertClass)
-    {
-        $url = '/app/views/user/add.php?m=' . urlencode($m) . '&a=' . urlencode($alertClass);
-        header('Location: ' . $url);
-        exit();
-    }
 
 }
+
+

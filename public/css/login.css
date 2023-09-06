@@ -1,5 +1,5 @@
 body {
-    background-color: #556b2f;
+    background-color: var(--midnight-green);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -11,7 +11,7 @@ body {
 }
 
 .card {
-    background-color: #fff;
+    background-color: var(--dutch-white);
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -25,11 +25,13 @@ body {
     font-size: 36px;
     margin-bottom: 30px;
     text-align: center;
+    color: var(--midnight-green);
 }
 
 .form-label {
     font-weight: bold;
     font-size: 18px;
+    color: var(--midnight-green);
 }
 
 .form-control {
@@ -38,22 +40,23 @@ body {
     margin-bottom: 20px;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid var(--caribbean-current);
 }
 
 .btn-login {
-    background-color: #556b2f;
-    border-color: #556b2f;
+    background-color: var(--caribbean-current);
+    border-color: var(--caribbean-current);
     width: 100%;
     font-size: 20px;
     padding: 15px;
     margin-top: 20px;
-    color: #fff;
+    color: var(--dutch-white);
     display: block;
 }
 
 .btn-login:hover {
-    background-color: #364614;
-    border-color: #364614;
+    background-color: var(--midnight-green);
+    border-color: var(--midnight-green);
 }
 
 .link-container {
@@ -62,17 +65,39 @@ body {
 }
 
 .link-container a {
-    color: #000;
+    color: var(--midnight-green);
     margin: 0 5px;
     text-decoration: none;
 }
 
-/* Estilo para a caixa de erro */
-.alert-danger {
+.link-container a:hover {
+    color: var(--caribbean-current);
+    text-decoration: underline;
+}
+
+/* Estilo para as mensagens de alerta */
+.alert {
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #f00;
-    background-color: #f8d7da;
-    color: #721c24;
-  }
-  
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+    border: 1px solid var(--caribbean-current);
+    background-color: rgba(0, 108, 103, 0.1);
+    color: var(--caribbean-current);
+}
+
+.alert-warning {
+    border: 1px solid var(--selective-yellow);
+    background-color: rgba(255, 177, 0, 0.1);
+    color: var(--selective-yellow);
+}
+
+.alert-danger {
+    border: 1px solid var(--amaranth-pink);
+    background-color: rgba(241, 148, 180, 0.1);
+    color: var(--amaranth-pink);
+}

@@ -1,19 +1,3 @@
-
-<?php 
-
-require_once __DIR__ . '/../../app/controllers/LoginController.php';
-$loginController = new LoginController();
-
-$loginController->checkLogin();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $loginController->login();
-}
-
-$m = isset($_GET['m']) ? urldecode($_GET['m']) : null;
-$alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,22 +6,31 @@ $alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
     <link rel="stylesheet" href="/public/css/login.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight-green: #003844ff;
+            --caribbean-current: #006c67ff;
+            --amaranth-pink: #f194b4ff;
+            --selective-yellow: #ffb100ff;
+            --dutch-white: #ffebc6ff;
+        }
+    </style>
 </head>
 <body>
+    <?php
+        // Mostrando mensagens de erro da sessão
+        if (isset($_SESSION['login_error'])) {
+            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['login_error'] . '</div>';
+            unset($_SESSION['login_error']);
+        }
+    ?>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="login-modal">
                     <div class="card">
                         <h5 class="card-title">Login</h5>
-
-                        <!-- Exibir a mensagem de erro se presente na URL -->
-                        <?php if ($m) : ?>
-                            <div class="alert alert-<?php echo $alertClass?>" role="alert">
-                                <?php echo $m; ?>
-                                <?php $m = null; ?>
-                            </div>
-                        <?php endif; ?>
 
                         <form id="login-form" method="POST">
                             <div class="mb-3">
@@ -59,8 +52,10 @@ $alertClass = isset($_GET['a']) ? urldecode($_GET['a']) : null;
             </div>
         </div>
     </div>
+    <?php require_once 'app/Config/Toastr.php'; ?>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="<?php echo $basePath; ?>/public/js/login.js"></script>
+    <script src="/public/js/login.js"></script>
     <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

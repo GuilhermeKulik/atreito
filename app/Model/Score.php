@@ -1,5 +1,7 @@
 <?php
 
+namespace Atreito\Model;
+
 /**
  * Score Class
  * Represents the score, experience, and level of a user.

@@ -2,7 +2,7 @@
 
 namespace Atreito\View;
 
-use Atreito\Config\Routes;
+use Atreito\Core\Router\Routes;
 
 /**
  * Class responsible for rendering views based on the route.

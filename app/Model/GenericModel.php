@@ -1,12 +1,19 @@
 <?php
 
+namespace Atreito\Model;
+
+use PDO;
+use Exception;
+use Atreito\Config\DBConnection;
+
 class GenericModel
 {   
     protected $conn;
 
     public function __construct(PDO $conn)
     {
-        $this->conn = $conn;
+        // Pega a única instância de DBConnection e obtém a conexão dela
+        $this->conn = DBConnection::getInstance()->getConnection();
     }
 
     private function buildConditions($conditions)

@@ -1,12 +1,8 @@
 <?php
 
+require_once 'vendor/autoload.php'; // Seu arquivo de carregamento automático ou qualquer configuração inicial necessária
 
+use Atreito\Core\Router\Router;
 
-
- //require_once  'app/views/login.php';
-
- //require_once 'app/test/test_database.php';
-
- require_once 'app/test/test_user.php'
-
- ?>
+$router = new Router();
+$router->dispatch();
