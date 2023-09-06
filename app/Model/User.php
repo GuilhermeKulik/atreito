@@ -60,25 +60,54 @@ class User extends GenericModel {
     }
 
     public function setDateModified() {
-        $this->dateModified = new DateTime();
+        $this->dateModified = new \DateTime();
     }
 
     public function getDateModified() {
         return $this->dateModified;
     }
 
-    // Functions
-
     /**
      * Creates a new user in the database.
      * 
+     * @param string $name User's name.
+     * @param string $email User's email.
+     * @param string $password User's password.
+     * @param string $cellphone User's mobile number.
+     * @param string $userType User's type.
+     * 
      * @return int The ID of the newly created user.
      */
-    public function createUser() {
+    public function createUser($name, $email, $cellphone, $password, $userType) {
+        // Verificando se todos os campos estão presentes
+        if (!$name || !$email || !$password || !$cellphone || !$userType) {
+            return [
+                'status' => 'error',
+                'message' => 'Todos os campos são obrigatórios.'
+            ];
+        }
+
+        // Check if email already exists in the database
+        $existingUser = parent::fetch('user', ['email' => $email]);
+        if ($existingUser) {
+            return [
+                'status' => 'error',
+                'message' => 'Email já cadastrado.'
+            ];
+        }
+
+        $this->email = $email;
+        $this->password = $this->hashPassword($password);
+        $this->name = $name;
+        $this->cellphone = $cellphone;
+        $this->userType = $userType;
+
         $data = [
             'email' => $this->email,
             'password' => $this->password,
             'name' => $this->name,
+            'mobile_number' => $this->cellphone,
+            'user_type' => $this->userType,
             'registration_date' => $this->dateCreated->format('Y-m-d H:i:s'),
         ];
 
@@ -150,8 +179,8 @@ class User extends GenericModel {
             $this->email = $user['email'];
             $this->password = $user['password'];
             $this->name = $user['name'];
-            $this->dateCreated = new DateTime($user['dateCreated']);
-            $this->dateModified = new DateTime($user['dateModified']);
+            $this->dateCreated = new \DateTime($user['dateCreated']);
+            $this->dateModified = new \DateTime($user['dateModified']);
             return true;
         }
         return false;
@@ -196,6 +225,17 @@ class User extends GenericModel {
      */
     public function getAllUsers() {
         return parent::fetchAll('user');
+    }
+
+    /**
+     * Checks if an email already exists in the database.
+     * 
+     * @param string $email The email to check.
+     * @return bool Returns true if the email exists, false otherwise.
+     */
+    public function emailExists($email) {
+        $user = parent::fetch('user', ['email' => $email]);
+        return !empty($user);
     }
 
 }

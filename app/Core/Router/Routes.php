@@ -10,7 +10,7 @@ class Routes {
     // Rotas
     const LOGIN_ROUTE              = "/login";
     const DASHBOARD_ROUTE          = "/dashboard";
-    const CADASTRO_VENDEDOR_ROUTE  = "/cadastro-vendedor";
+    const CADASTRO_USUARIO_ROUTE  = "/cadastro-usuario";
     const AUTO_CADASTRO_ROUTE      = "/auto-cadastro";
     const PONTOS_ADMIN_ROUTE       = "/pontos-admin";
     const PERFIL_ROUTE             = "/perfil";
@@ -24,7 +24,7 @@ class Routes {
     // Caminhos dos arquivos de view correspondentes às rotas
     const LOGIN_VIEW              = self::VIEW_BASE_PATH . "login.php";
     const DASHBOARD_VIEW          = self::VIEW_BASE_PATH . "dashboard.php";
-    const CADASTRO_VENDEDOR_VIEW  = self::VIEW_BASE_PATH . "cadastro_vendedor.php";
+    const CADASTRO_USUARIO_VIEW  = self::VIEW_BASE_PATH . "cadastro_usuario.php";
     const AUTO_CADASTRO_VIEW      = self::VIEW_BASE_PATH . "auto_cadastro.php";
     const PONTOS_ADMIN_VIEW       = self::VIEW_BASE_PATH . "pontos_admin.php";
     const PERFIL_VIEW             = self::VIEW_BASE_PATH . "perfil.php";
@@ -39,7 +39,7 @@ class Routes {
         return [
             self::LOGIN_ROUTE => self::LOGIN_VIEW,
             self::DASHBOARD_ROUTE => self::DASHBOARD_VIEW,
-            self::CADASTRO_VENDEDOR_ROUTE => self::CADASTRO_VENDEDOR_VIEW,
+            self::CADASTRO_USUARIO_ROUTE => self::CADASTRO_USUARIO_VIEW,
             self::AUTO_CADASTRO_ROUTE => self::AUTO_CADASTRO_VIEW,
             self::PONTOS_ADMIN_ROUTE => self::PONTOS_ADMIN_VIEW,
             self::PERFIL_ROUTE => self::PERFIL_VIEW,
@@ -59,8 +59,12 @@ class Routes {
             '/login-ajax' => [
                 'class' => 'UserController',
                 'method' => 'loginAjax'
+            ],
+            '/admin-add-user' => [
+                'class' => 'UserController',
+                'method' => 'addUser'
             ]
-            // outras rotas de controlador aqui conforme necessário
+            // mais rotas de controlador aqui conforme necessário
         ];
     }
 }

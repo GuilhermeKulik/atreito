@@ -28,10 +28,10 @@ class DBConnection
     }
 
     // Impede que a instância seja clonada.
-    private function __clone() {}
+    public function __clone() {}
 
     // Impede que a instância seja desserializada.
-    private function __wakeup() {}
+    public function __wakeup() {}
 
     // Método para obter a única instância da classe.
     public static function getInstance()

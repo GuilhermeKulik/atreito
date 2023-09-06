@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.login-modal {
+.login-modal, .registration-modal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,12 +12,13 @@ body {
 
 .card {
     background-color: var(--dutch-white);
-    padding: 50px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 500px;
-    height: 600px;
-    margin: auto;
+    width: auto;
+    min-width: 350px;
+    max-width: 750px;
+    overflow-y: auto; /* Permite rolagem se o conteúdo for muito longo */
 }
 
 .card-title {
@@ -75,7 +76,6 @@ body {
     text-decoration: underline;
 }
 
-/* Estilo para as mensagens de alerta */
 .alert {
     padding: 10px;
     margin-bottom: 20px;
@@ -84,20 +84,18 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.alert-success {
-    border: 1px solid var(--caribbean-current);
-    background-color: rgba(0, 108, 103, 0.1);
-    color: var(--caribbean-current);
+.registration-modal .card {
+    font-family: 'Lato', sans-serif;
 }
 
-.alert-warning {
-    border: 1px solid var(--selective-yellow);
-    background-color: rgba(255, 177, 0, 0.1);
-    color: var(--selective-yellow);
-}
-
-.alert-danger {
-    border: 1px solid var(--amaranth-pink);
-    background-color: rgba(241, 148, 180, 0.1);
-    color: var(--amaranth-pink);
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .registration-modal .card, .login-modal .card {
+        position: fixed;
+        top: 2%;
+        bottom: 2%;
+        left: 2%;
+        right: 2%;
+        z-index: 1050;
+    }
 }

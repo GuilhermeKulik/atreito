@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>Login</title>
+    <!-- Toastr CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/login.css">
+    <link rel="stylesheet" href="/public/css/alert.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -52,10 +55,32 @@
             </div>
         </div>
     </div>
-    <?php require_once 'app/Config/Toastr.php'; ?>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Toastr JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+    // Configuração do Toastr
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "linear",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+            "preventDuplicates": true
+        }
+     </script>
     <script src="/public/js/login.js"></script>
     <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

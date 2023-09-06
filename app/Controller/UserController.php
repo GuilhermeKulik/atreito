@@ -16,8 +16,7 @@ class UserController {
     public function __construct() {
         $this->userModel = new User(DBConnection::getInstance()->getConnection());
         $this->view = new GenericView();
-    }
-    
+    } 
 
     public function login($email, $password) {
         $authSuccess = $this->authenticate($email, $password);
@@ -90,24 +89,68 @@ class UserController {
         return false;
     }
 
-    // retorna um json.
+    // retorna um json apos login.
     
     public function loginAjax() {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        
+    
         $authSuccess = $this->authenticate($email, $password);
-        
+    
         if ($authSuccess) {
             echo json_encode(['success' => true]);
         } else {
-            echo json_encode(['success' => false, 'message' => 'Erro de autenticação.']);
+            echo json_encode(['success' => false, 'message' => 'As credenciais fornecidas estão incorretas. Tente novamente.']);
         }
     
         exit; // Para encerrar a execução após a resposta AJAX.
     }
 
-
+    public function addUser() {
+        // Verificar se todos os campos necessários estão definidos
+        if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['cellphone']) ||
+            !isset($_POST['userType']) || !isset($_POST['password']) || !isset($_POST['confirmPassword'])) {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Todos os campos são obrigatórios.'
+            ]);
+            exit;  // Encerrar a execução após enviar a resposta
+        }
+        
+        // Verificar se as senhas são iguais
+        if ($_POST['password'] !== $_POST['confirmPassword']) {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'As senhas não coincidem.'
+            ]);
+            exit;  // Encerrar a execução após enviar a resposta
+        }
+    
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $cellphone = $_POST['cellphone'];
+        $userType = $_POST['userType'];
+        $password = $_POST['password'];
+    
+        $result = $this->userModel->createUser($name, $email, $cellphone, $password, $userType);
+    
+        // TODO: Log the user creation here.
+    
+        // TODO: Send confirmation either by email or WhatsApp Web.
+        header('Content-Type: application/json');
+        if (is_numeric($result)) {
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'Usuário adicionado com sucesso.',
+                'user_id' => $result
+            ]);
+        } else {
+            echo json_encode([
+                'status' => 'error',
+                'message' => $result['message']  // Presumindo que $result contém a mensagem de erro
+            ]);
+        }
+        exit;  // Encerrar a execução após enviar a resposta
+    }
+    
 }
-
-

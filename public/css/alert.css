@@ -1,0 +1,30 @@
+
+
+:root {
+    --midnight-green: #003844ff;
+    --caribbean-current: #006c67ff;
+    --amaranth-pink: #f194b4ff;
+    --selective-yellow: #ffb100ff;
+    --dutch-white: #ffebc6ff;
+}
+
+.toast-success {
+    background-color: #28a745 !important; /* Verde */
+    color: white !important;
+}
+
+.toast-warning {
+    background-color: #ffc107 !important; /* Amarelo */
+    color: black !important; 
+}
+
+.toast-error {
+    background-color: #dc3545 !important; /* Vermelho */
+    color: white !important;
+}
+
+.toast-top-center {
+    top: 50px; /* Ajuste conforme a margem desejada */
+    right: 50%;
+    transform: translateX(50%);
+}
