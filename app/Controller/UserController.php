@@ -79,7 +79,7 @@ class UserController {
         $user = $this->userModel->fetch('user', $conditions); 
         
         if ($user && password_verify($password, $user['password'])) {
-            $this->userModel->setUserID($user['user_ID']);
+            $this->userModel->setUserID($user['user_id']);
             $this->userModel->setEmail($user['email']);
             $this->userModel->setPassword($user['password']);
             $this->userModel->setName($user['name']);

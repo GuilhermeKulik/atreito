@@ -48,7 +48,7 @@ class User extends GenericModel {
     }
 
     public function setName($name) {
-        $this->name = $username;
+        $this->name = $name;
     }
 
     public function getName() {
