@@ -10,7 +10,7 @@ class GenericModel
 {   
     protected $conn;
 
-    public function __construct(PDO $conn)
+    public function __construct()
     {
         // Pega a única instância de DBConnection e obtém a conexão dela
         $this->conn = DBConnection::getInstance()->getConnection();

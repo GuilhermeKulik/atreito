@@ -2,6 +2,9 @@
 
 namespace Atreito\Model;
 
+use \PDO;
+use \DateTime;
+
 /**
  * Score Class
  * Represents the score, experience, and level of a user.
@@ -21,12 +24,11 @@ class Score extends GenericModel
 
     /**
      * Constructor
-     * @param PDO $conn
      * @param int $userId
      */
-    public function __construct(PDO $conn, $userId)
+    public function __construct($userId)
     {
-        parent::__construct($conn);
+        parent::__construct($userId);
         $this->userId = $userId;
 
         $userData = $this->fetch(self::TABLE_NAME, ['user_id' => $userId]);
@@ -89,8 +91,8 @@ class Score extends GenericModel
      */
     public function streakCheck()
     {
-        $currentDate = new DateTime();
-        $lastUpdated = new DateTime($this->lastUpdated);
+        $currentDate = new \DateTime();
+        $lastUpdated = new \DateTime($this->lastUpdated);
 
         $interval = $currentDate->diff($lastUpdated);
         $hoursElapsed = $interval->h + ($interval->days * 24);
@@ -121,5 +123,22 @@ class Score extends GenericModel
         $conditions = ['user_id' => $this->userId];
         
         $this->update(self::TABLE_NAME, $data, $conditions);
+    }
+    /**
+     * Create an initial score entry for a user.
+     * @return bool Returns true on success and false on failure.
+     */
+    public function createScoreForUser($userId)
+    {
+        $data = [
+            'user_id' => $userId,
+            'xp_points' => 0,
+            'points' => 0,
+            'level' => 1,
+            'streak' => 0,
+            'highest_streak' => 0
+        ];
+
+        return $this->insert(self::TABLE_NAME, $data);
     }
 }

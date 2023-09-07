@@ -6,6 +6,7 @@ session_start();
 
 use Atreito\View\GenericView;
 use Atreito\Model\User;
+use Atreito\Model\Score;
 use Atreito\Config\DBConnection;
 
 class UserController {
@@ -125,14 +126,21 @@ class UserController {
             ]);
             exit;  // Encerrar a execução após enviar a resposta
         }
-    
+        //Pegano do post 
         $name = $_POST['name'];
         $email = $_POST['email'];
         $cellphone = $_POST['cellphone'];
         $userType = $_POST['userType'];
         $password = $_POST['password'];
-    
+
+        //insere o jovem
         $result = $this->userModel->createUser($name, $email, $cellphone, $password, $userType);
+        
+        //se for númerico é pq adicionou no banco, criar o score do jogador =)
+        if (is_numeric($result)) {
+            $score = new Score($result);
+            $score->createScoreForUser($result);
+        }
     
         // TODO: Log the user creation here.
     
@@ -147,10 +155,9 @@ class UserController {
         } else {
             echo json_encode([
                 'status' => 'error',
-                'message' => $result['message']  // Presumindo que $result contém a mensagem de erro
+                'message' => $result['message'] 
             ]);
         }
-        exit;  // Encerrar a execução após enviar a resposta
+        exit; 
     }
-    
 }
