@@ -1,0 +1,98 @@
+:root {
+    --midnight-green: #003844ff;
+    --caribbean-current: #006c67ff;
+    --amaranth-pink: #f194b4ff; /* Vou manter essa cor caso precise em outras partes, mas removi do menu lateral. */
+    --selective-yellow: #ffb100ff;
+    --dutch-white: #ffebc6ff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #006c67ff;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--midnight-green);
+    width: 250px;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-header {
+    text-align: center;
+    color: var(--dutch-white);
+    padding: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--dutch-white);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar-menu li a:hover {
+    background-color: var(--caribbean-current);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: scroll;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--caribbean-current);
+    color: var(--dutch-white);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: var(--midnight-green);
+}
+
+.filter-bar {
+    margin-bottom: 20px;
+}
+
+.filter-bar label {
+    margin-right: 10px;
+}
+
+.filter-bar input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Outras personalizações, como tabelas e listas para exibir os resultados, podem ser adicionadas posteriormente conforme necessário. */
