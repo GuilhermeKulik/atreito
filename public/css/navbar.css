@@ -1,0 +1,49 @@
+.navbar {
+    background-color: var(--midnight-green);
+    border-radius: 8px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-nav .nav-link{
+    color: var(--dutch-white);
+}
+
+
+
+.navbar .nav-link:hover .filter-button:hover .search-btn:hover {
+    background-color: var(--caribbean-current); /* Cor de hover */
+}
+
+label {
+    margin-right: 15px; /* espaço entre os filtros */
+}
+
+.navbar {
+    padding: 0;
+    background-color: var(--midnight-green);
+}
+
+.navbar .nav-link, .search-btn {
+    color: var(--dutch-white); /* Cor do texto */
+    background-color: var(--midnight-green); /* Cor de fundo */
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.navbar .nav-link:hover, .search-btn:hover {
+    background-color: var(--caribbean-current); /* Cor de hover */
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* espaço entre os elementos */
+}
+
+label {
+    margin-right: 15px; /* espaço entre os filtros */
+}
