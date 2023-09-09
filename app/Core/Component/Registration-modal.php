@@ -1,6 +1,5 @@
 <div class="registration-modal">
                     <div class="card">
-                        <h5 class="card-title">Cadastro</h5>
 
                         <form id="registration-form">
                             <div class="mb-3">

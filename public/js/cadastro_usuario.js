@@ -29,3 +29,9 @@ $(document).ready(function() {
         }, 'json');
     });
 });
+
+$(document).ready(function() {
+    $(".navbar .add-user-btn").click(function() {
+        $("#add-user-panel").toggleClass("d-none");
+    });
+});

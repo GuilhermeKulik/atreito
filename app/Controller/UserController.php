@@ -160,4 +160,23 @@ class UserController {
         }
         exit; 
     }
+
+        /**
+     * Retrieves users based on the search term.
+     */
+    public function getUsersBySearch() {
+        if (isset($_POST['term'])) {
+            $term = $_POST['term'];
+            $users = $this->userModel->searchUsers($term);
+            
+            header('Content-Type: application/json');
+            echo json_encode($users);
+            exit;
+        } else {
+            // Handle error or just render an empty list
+            echo json_encode(['error' => 'Termo de busca não fornecido.']);
+            exit;
+        }
+    }
+
 }

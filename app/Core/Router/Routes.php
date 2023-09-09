@@ -63,6 +63,10 @@ class Routes {
             '/admin-add-user' => [
                 'class' => 'UserController',
                 'method' => 'addUser'
+            ],
+            '/results-user' => [
+                'class' => 'UserController',
+                'method' => 'getUsersBySearch'
             ]
             // mais rotas de controlador aqui conforme necessário
         ];

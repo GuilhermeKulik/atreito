@@ -238,6 +238,26 @@ class User extends GenericModel {
         return !empty($user);
     }
 
+    /**
+     * Searches for users based on the provided term in their name or email.
+     *
+     * @param string $term The search term.
+     * @return array Returns a list of users.
+     */
+    public function searchUsers($term) {
+        $term = "%$term%";  // Formatando o termo para a pesquisa com LIKE
+
+        // Utilizando o método fetch da classe GenericModel
+        $conditions = [
+            'OR' => [
+                'name LIKE ?' => $term,
+                'email LIKE ?' => $term
+            ]
+        ];
+
+        $users = $this->fetch('user', $conditions);
+        return $users;
+    }
 }
 
 ?>

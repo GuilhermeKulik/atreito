@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Adicionar</a>
+                    <a class="nav-link add-user-btn">Adicionar</a>
                 </li>
                 <!-- Você pode adicionar mais opções aqui -->
             </ul>
