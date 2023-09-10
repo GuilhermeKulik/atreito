@@ -21,15 +21,14 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 if (response.error) {
-                    // Manipule erros aqui
                     alert(response.error);
                 } else {
-                    updateSearchResults(response);
+                    displayUserResults(response);
                 }
             },
             error: function(error) {
                 // Aqui você pode tratar erros da requisição.
-                console.error("Ocorreu um erro ao buscar usuários: ", error);
+                console.error("Erro ao buscar usuários: ", error);
             }
         });
     });
@@ -47,5 +46,26 @@ function updateSearchResults(users) {
                     // Adicione outras colunas conforme necessário
                   '</tr>';
         tableBody.append(row);
+    });
+}
+
+// REFRESH USERS LIST
+function displayUserResults(users) {
+    var resultsGrid = $('#resultsGrid');
+    resultsGrid.empty(); // Limpa resultados anteriores
+
+    users.forEach(function(user) {
+        var userRow = `
+            <div class="row mb-2">
+                <div class="col-md-2">${user.name}</div>
+                <div class="col-md-3">${user.email}</div>
+                <div class="col-md-2">${user.phone}</div>
+                <div class="col-md-2">${user.userType}</div>
+                <div class="col-md-1"><a href="#"><i class="fa fa-cogs"></i></a></div>  <!-- ícone de configurações -->
+                <div class="col-md-1"><a href="#" class="text-danger"><i class="fa fa-times"></i></a></div>  <!-- ícone de "X" -->
+            </div>
+        `;
+
+        resultsGrid.append(userRow);
     });
 }

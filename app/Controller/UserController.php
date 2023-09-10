@@ -161,7 +161,7 @@ class UserController {
         exit; 
     }
 
-        /**
+    /**
      * Retrieves users based on the search term.
      */
     public function getUsersBySearch() {

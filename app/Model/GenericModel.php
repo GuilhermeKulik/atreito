@@ -16,7 +16,7 @@ class GenericModel
         $this->conn = DBConnection::getInstance()->getConnection();
     }
 
-    private function buildConditions($conditions)
+    protected function buildConditions($conditions)
     {
         if (!is_array($conditions)) {
             return $conditions;
@@ -29,7 +29,19 @@ class GenericModel
         return implode(" AND ", $clauses);
     }
 
-    public function fetchAll($table, $conditions = [])
+    protected function buildLikeConditions($conditions) {
+        if (!is_array($conditions)) {
+            return $conditions;
+        }
+    
+        $clauses = [];
+        foreach ($conditions as $key => $value) {
+            $clauses[] = "$key LIKE :$key";
+        }
+        return implode(" AND ", $clauses);
+    }
+
+    protected function fetchAll($table, $conditions = [])
     {
         try {
             $whereClause = $this->buildConditions($conditions);
@@ -42,7 +54,7 @@ class GenericModel
         }
     }
 
-    public function fetch($table, $conditions = [])
+    protected function fetch($table, $conditions = [])
     {
         try {
             $whereClause = $this->buildConditions($conditions);
@@ -55,7 +67,7 @@ class GenericModel
         }
     }
 
-    public function insert($table, $data)
+    protected function insert($table, $data)
     {
         try {
             $columns = implode(', ', array_keys($data));
@@ -69,7 +81,7 @@ class GenericModel
         }
     }
 
-    public function update($table, $data, $conditions)
+    protected function update($table, $data, $conditions)
     {
         try {
             $setValues = array_map(function($key) {
@@ -86,7 +98,7 @@ class GenericModel
         }
     }
 
-    public function delete($table, $conditions)
+    protected function delete($table, $conditions)
     {
         try {
             $whereClause = $this->buildConditions($conditions);

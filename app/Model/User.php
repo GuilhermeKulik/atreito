@@ -245,19 +245,21 @@ class User extends GenericModel {
      * @return array Returns a list of users.
      */
     public function searchUsers($term) {
-        $term = "%$term%";  // Formatando o termo para a pesquisa com LIKE
-
-        // Utilizando o método fetch da classe GenericModel
         $conditions = [
-            'OR' => [
-                'name LIKE ?' => $term,
-                'email LIKE ?' => $term
-            ]
+            'name' => "%$term%"
         ];
-
-        $users = $this->fetch('user', $conditions);
-        return $users;
+        
+        // Usando o método buildLikeConditions da GenericModel
+        $whereClause = $this->buildLikeConditions($conditions);
+    
+        try {
+            // Aqui usamos fetchAll porque queremos obter todos os resultados que correspondem à pesquisa
+            return $this->fetchAll('users', [$whereClause]);
+        } catch (Exception $e) {
+            throw new Exception("Erro ao buscar usuários: " . $e->getMessage());
+        }
     }
+    
 }
 
 ?>
