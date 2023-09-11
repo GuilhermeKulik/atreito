@@ -42,7 +42,7 @@
 
             <!-- Grid de Resultados -->
             <div class="results-grid mt-4">
-                <!-- O conteúdo dos resultados irá aqui -->
+            <?php require 'app/Core/Component/Search-results.php'; ?>
             </div>
         </main>
 

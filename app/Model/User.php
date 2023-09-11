@@ -248,18 +248,14 @@ class User extends GenericModel {
         $conditions = [
             'name' => "%$term%"
         ];
-        
-        // Usando o método buildLikeConditions da GenericModel
-        $whereClause = $this->buildLikeConditions($conditions);
     
         try {
             // Aqui usamos fetchAll porque queremos obter todos os resultados que correspondem à pesquisa
-            return $this->fetchAll('users', [$whereClause]);
+            return $this->fetchAll('user', $conditions);
         } catch (Exception $e) {
             throw new Exception("Erro ao buscar usuários: " . $e->getMessage());
         }
     }
-    
 }
 
 ?>

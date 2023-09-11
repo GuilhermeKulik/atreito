@@ -6,22 +6,32 @@ use PDO;
 use Exception;
 use Atreito\Config\DBConnection;
 
+/**
+ * Class GenericModel
+ * This class provides basic CRUD operations for database tables.
+ */
 class GenericModel
-{   
+{
+    /** @var PDO Database connection object */
     protected $conn;
 
+    /**
+     * GenericModel constructor.
+     * Initializes the database connection.
+     */
     public function __construct()
     {
-        // Pega a única instância de DBConnection e obtém a conexão dela
         $this->conn = DBConnection::getInstance()->getConnection();
     }
 
+    /**
+     * Constructs an SQL WHERE clause based on the provided conditions.
+     *
+     * @param array $conditions Associative array of conditions.
+     * @return string SQL WHERE clause.
+     */
     protected function buildConditions($conditions)
     {
-        if (!is_array($conditions)) {
-            return $conditions;
-        }
-
         $clauses = [];
         foreach ($conditions as $key => $value) {
             $clauses[] = "$key = :$key";
@@ -29,35 +39,80 @@ class GenericModel
         return implode(" AND ", $clauses);
     }
 
-    protected function buildLikeConditions($conditions) {
-        if (!is_array($conditions)) {
-            return $conditions;
+    /**
+     * Constructs the "LIKE" conditions for the SQL query based on the provided conditions.
+     *
+     * @param array $conditions Associative array of conditions.
+     * @return string A string representing the "LIKE" conditions for an SQL query.
+     */
+    protected function buildConditionsLike($conditions)
+    {
+        $clauses = [];
+    
+        foreach ($conditions as $key => $value) {
+            if (strpos($value, '%') !== false) {
+                $clauses[] = "$key LIKE :$key";
+            } else {
+                $clauses[] = "$key = :$key";
+            }
         }
     
-        $clauses = [];
-        foreach ($conditions as $key => $value) {
-            $clauses[] = "$key LIKE :$key";
-        }
         return implode(" AND ", $clauses);
     }
 
+        /**
+     * Determines if any condition value contains a LIKE pattern (contains '%').
+     *
+     * @param array $conditions Associative array of conditions.
+     * @return bool True if any condition value contains '%', false otherwise.
+     */
+    private function hasLikeCondition($conditions)
+    {
+        foreach ($conditions as $value) {
+            if (strpos($value, '%') !== false) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Fetches all rows from the specified table based on conditions.
+     *
+     * @param string $table The table to fetch data from.
+     * @param array $conditions Associative array of conditions.
+     * @return array An array of associative arrays for each fetched row.
+     */
     protected function fetchAll($table, $conditions = [])
     {
         try {
-            $whereClause = $this->buildConditions($conditions);
+            // Determine which condition building method to use based on the presence of '%' in any condition value.
+            $whereClauseMethod = $this->hasLikeCondition($conditions) ? 'buildConditionsLike' : 'buildConditions';
+            $whereClause = $this->$whereClauseMethod($conditions);
+            
             $sql = "SELECT * FROM $table" . ($whereClause ? " WHERE $whereClause" : "");
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($conditions);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
-            throw new Exception("Erro ao buscar todos: " . $e->getMessage());
+            throw new Exception("Erro ao buscar registros: " . $e->getMessage());
         }
     }
 
+    /**
+     * Fetches a single row from the specified table based on conditions.
+     *
+     * @param string $table The table to fetch data from.
+     * @param array $conditions Associative array of conditions.
+     * @return array An associative array representing the fetched row.
+     */
     protected function fetch($table, $conditions = [])
     {
         try {
-            $whereClause = $this->buildConditions($conditions);
+            // Determine which condition building method to use based on the presence of '%' in any condition value.
+            $whereClauseMethod = $this->hasLikeCondition($conditions) ? 'buildConditionsLike' : 'buildConditions';
+            $whereClause = $this->$whereClauseMethod($conditions);
+            
             $sql = "SELECT * FROM $table" . ($whereClause ? " WHERE $whereClause" : "") . " LIMIT 1";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($conditions);
@@ -67,6 +122,14 @@ class GenericModel
         }
     }
 
+
+    /**
+     * Inserts a new row into the specified table.
+     *
+     * @param string $table The table to insert data into.
+     * @param array $data Associative array of column names and their corresponding values.
+     * @return int The ID of the last inserted row.
+     */
     protected function insert($table, $data)
     {
         try {
@@ -81,6 +144,14 @@ class GenericModel
         }
     }
 
+    /**
+     * Updates rows in the specified table based on the provided conditions.
+     *
+     * @param string $table The table to update data in.
+     * @param array $data Associative array of column names and their new values.
+     * @param array $conditions Associative array of conditions to determine which rows to update.
+     * @return int Number of rows updated.
+     */
     protected function update($table, $data, $conditions)
     {
         try {
@@ -98,6 +169,13 @@ class GenericModel
         }
     }
 
+    /**
+     * Deletes rows from the specified table based on the provided conditions.
+     *
+     * @param string $table The table to delete data from.
+     * @param array $conditions Associative array of conditions to determine which rows to delete.
+     * @return int Number of rows deleted.
+     */
     protected function delete($table, $conditions)
     {
         try {
@@ -110,4 +188,6 @@ class GenericModel
             throw new Exception("Erro ao deletar: " . $e->getMessage());
         }
     }
+
+    
 }
