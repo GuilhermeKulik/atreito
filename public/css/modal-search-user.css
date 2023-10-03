@@ -1,0 +1,22 @@
+.user-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.user-item {
+    padding: 10px;
+    background-color: var(--dutch-white);
+    border: 1px solid var(--midnight-green);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.user-item:hover {
+    background-color: var(--selective-yellow);
+}
+
+.user-name,
+.user-email,
+.user-cell {
+    display: block;
+}

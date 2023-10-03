@@ -43,6 +43,17 @@ class Score extends GenericModel
     }
 
     /**
+     * Adiciona pontos ao usuário.
+     *
+     * @param int $pointsToAdd A quantidade de pontos a serem adicionados.
+     */
+    public function addPoints($pointsToAdd)
+    {
+        $this->points += $pointsToAdd; // Adiciona os pontos ao total atual.
+        $this->updateScore(); // Atualiza o banco de dados com o novo total de pontos.
+    }
+
+    /**
      * Adds experience to the user.
      * @param int $xp
      */

@@ -5,4 +5,5 @@ require_once 'vendor/autoload.php'; // Seu arquivo de carregamento automático o
 use Atreito\Core\Router\Router;
 
 $router = new Router();
-$router->dispatch();
+$router->dispatch();  
+

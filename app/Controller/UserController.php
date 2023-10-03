@@ -179,4 +179,24 @@ class UserController {
         }
     }
 
+    public function getUserByIdentification() {
+        if (isset($_POST['userIdentification'])) {
+            $userIdentification = $_POST['userIdentification'];
+            $user = $this->userModel->getUserByIdentification($userIdentification);
+            
+            if($user) {
+                echo json_encode([
+                    'name' => $user['name'],
+                    'email' => $user['email'],
+                    'mobile_number' => $user['mobile_number']
+                ]);
+            } else {
+                echo json_encode(['error' => 'Usuário não encontrado.']);
+            }
+            exit;
+        } else {
+            echo json_encode(['error' => 'Identificação do usuário não fornecida.']);
+            exit;
+        }
+    }
 }
