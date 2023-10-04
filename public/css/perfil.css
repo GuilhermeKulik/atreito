@@ -1,0 +1,54 @@
+.xp-bar-container {
+    position: relative;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.xp-bar {
+    height: 100%;
+    background-color: var(--caribbean-current);
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+    transition: width 0.5s;
+}
+
+.xp-bar-labels {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+}
+
+.xp-bar-labels span {
+    color: #555;
+}
+
+#xp-percentage {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+:root {
+    --dutch-white: #ffebc6ff;
+}
+
+.card {
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+    /* Adicione quaisquer outros estilos que desejar para os seus cards aqui */
+    font-family: 'Lato', sans-serif;
+}
+
+.card-perfil-value {
+    text-align: center;
+    font-size: 75px;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Adicione quaisquer outros estilos necessários para a barra de XP ou outros elementos aqui */

@@ -103,4 +103,8 @@ body {
     height: 100%;
 }
 
+#perfil-cards {
+    margin-top: 50px;
+}
+
 /* Outras personalizações, como tabelas e listas para exibir os resultados, podem ser adicionadas posteriormente conforme necessário. */

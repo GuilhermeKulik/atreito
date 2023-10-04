@@ -60,7 +60,6 @@ class Score extends GenericModel
     public function addExperience($xp)
     {
         $this->xpPoints += $xp;
-        $this->points += $xp;  // Points are the same as XP for this operation
         $this->checkForLevelUp();
         $this->streakCheck();
         $this->updateScore();
@@ -81,8 +80,7 @@ class Score extends GenericModel
      */
     public function revertLastUpdate()
     {
-        // Assuming a history or log table, otherwise, you'll need a different strategy.
-        // This is just a placeholder without a log/history table.
+        // R.N.F
     }
 
     /**
@@ -135,6 +133,8 @@ class Score extends GenericModel
         
         $this->update(self::TABLE_NAME, $data, $conditions);
     }
+
+    
     /**
      * Create an initial score entry for a user.
      * @return bool Returns true on success and false on failure.

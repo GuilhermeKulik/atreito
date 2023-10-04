@@ -29,6 +29,8 @@ class ScoreController {
                 $scoreModel = new Score($userId);
                 // Adiciona os pontos ao usuário.
                 $scoreModel->addPoints($points);
+                // ADD XP
+                $scoreModel->addExperience($points);
                 // Retorna uma resposta de sucesso.
                 header('Content-Type: application/json');
                 echo json_encode(['status' => 'success', 'message' => 'Pontos adicionados com sucesso']);
