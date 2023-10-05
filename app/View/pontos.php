@@ -13,39 +13,60 @@
         </aside>
 
         <!-- Conteúdo Principal -->
-        <main id="main-content" class="col-md-9 col-lg-7">
+     <!-- Conteúdo Principal -->
+<!-- Conteúdo Principal -->
+<main id="main-content" class="col-12 col-md-9 col-lg-10">
 
-            <!-- Upper navbar -->
-            <?php require 'app/Core/Component/Navbar-users.php'; ?> <!-- Supondo que a barra de navegação seja a mesma -->
+    <!-- Upper navbar -->
+    <?php require 'app/Core/Component/Navbar-users.php'; ?>
 
-            <!-- Atribuição de pontos -->
-            <div class="points-container mb-2">
-                <h2> Adicionar pontos
-                <form id="pointsForm" method="POST">
-                    <div class="mb-2">
-                        <input type="number" class="points-input form-control" name="points" placeholder="Quantidade de pontos...">
-                    </div>
-                    <div class="mb-2">
-                        <input type="text" class="user-identification-input form-control" name="userIdentification" placeholder="Número de identificação do usuário...">
-                    </div>
-                    <div>
-                        <button type="submit" class="assign-points-btn btn btn-light">Enviar</button>
+    <div class="row">
 
-                    </div>
-                </form>
+        <!-- Card para Adicionar Pontos -->
+        <div class="col-lg-10 col-md-8 col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class='card-title'>Adicionar Pontos</p>
+                    <form id="pointsForm" method="POST">
+                        <div class="mb-2">
+                            <p class='form-label'> Quantidade de pontos <p>
+                            <input type="number" class="points-input form-control" name="points" placeholder="Quantidade de pontos...">
+                        </div>
+                        <div class="mb-2">
+                        <p class='form-label'> Codigo do cliente <p>
+                            <input type="text" class="user-identification-input form-control" name="userIdentification" placeholder="Número de identificação do usuário...">
+                        </div>
+                        <div class="mb-2">
+                        <p class='form-label'> Vendedor <p>
+                            <input type="text" class="admin-identification-input form-control" name="adminIdentification" placeholder="Seu número de identificação...">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-login text-white assign-points-btn btn btn-light">Enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div id="mini-profile">
-                <p class="user-name-display"></p>
-                <p class="user-email-display"></p>
-                <p class="user-phone-display"></p>
+        </div>
+
+        <!-- Mini Perfil -->
+        <div class="col-lg-3 col-md-4 col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">Usuario</p>
+                </div>
             </div>
-        </main>
+        </div>
+
+    </div> <!-- Fecha row interna -->
+</main>
+
+
 
         <!-- Painel Adicional (trigado pelo js) -->
         <section id="additional-panel" class="col-md-12 col-lg-3">
             <!-- Conteúdo adicional aqui (trigado pelo js) -->
         </section>
-    </div> <!-- fecha row -->
+    </div> <!-- fecha row principal -->
 </div> <!-- fecha container-fluid -->
 
 </body>

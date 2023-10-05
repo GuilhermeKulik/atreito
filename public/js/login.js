@@ -10,7 +10,7 @@ $(document).ready(function() {
             if (response.success) {
                 toastr.success("Login bem-sucedido!");
                 setTimeout(function() {
-                    window.location.href = '/dashboard';
+                    window.location.href = '/perfil';
                 }, 2000);
             } else {
                 // Exibe mensagem de erro recebida do servidor

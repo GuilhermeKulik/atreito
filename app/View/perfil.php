@@ -24,8 +24,8 @@
                 <div class="card user-info-card">
                     <div class="card-body">
                         <h5 class="card-title">Minha conta</h5> <!-- Substitua pelo nome real do usuário -->
-                        <p class="card-text">Email: usuario@dominio.com</p> <!-- Substitua pelo email real do usuário -->
-                        <p class="card-text">Celular: (XX) XXXXX-XXXX</p> <!-- Substitua pelo número de celular real do usuário -->
+                        <p class="form-label card-text">Email:</p><p>usuario@dominio.com</p> <!-- Substitua pelo email real do usuário -->
+                        <p class="form-label card-text">Celular:</p><p>(47) 989025192</p> <!-- Substitua pelo número de celular real do usuário -->
                     </div>
                 </div>
             </div>

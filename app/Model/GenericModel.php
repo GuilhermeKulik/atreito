@@ -106,7 +106,7 @@ class GenericModel
      * @param array $conditions Associative array of conditions.
      * @return array An associative array representing the fetched row.
      */
-    protected function fetch($table, $conditions = [])
+    public function fetch($table, $conditions = [])
     {
         try {
             // Determine which condition building method to use based on the presence of '%' in any condition value.

@@ -2,7 +2,6 @@
 
 namespace Atreito\Controller;
 
-session_start();
 
 use Atreito\View\GenericView;
 use Atreito\Model\User;
@@ -31,7 +30,7 @@ class UserController {
             ];
 
             // Redireciona para o dashboard
-            $this->view->renderView('/dashboard');
+            $this->view->renderView('/perfil');
         } else {
             // Definindo a mensagem de erro na sessão
             $_SESSION['login_error'] = "Não foi possível realizar o login. Verifique suas credenciais e tente novamente.";
@@ -88,6 +87,13 @@ class UserController {
         }
 
         return false;
+    }
+
+    public function checkLoggedIn() {
+        if (!isset($_SESSION['user'])) {
+            header('Location: /login');
+            exit();
+        }
     }
 
     // retorna um json apos login.
