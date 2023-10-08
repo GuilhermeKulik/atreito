@@ -9,6 +9,10 @@ class Router
 {
     private $viewRoutes = [];
     private $controllerRoutes = [];
+    private $publicRoutes = [
+        Routes::LOGIN_ROUTE,
+        '/login-ajax' // adicione outras rotas públicas conforme necessário
+    ];
 
     public function __construct() 
     {
@@ -34,6 +38,13 @@ class Router
         } 
         // Se a rota solicitada for uma rota de view...
         elseif (isset($this->viewRoutes[$route])) {
+        // Se o usuário não está logado e a rota não é a rota de login...
+            //var_dump($_SESSION['user']);
+            if (!isset($_SESSION['user']) && $route !== Routes::LOGIN_ROUTE) {
+                header('Location: ' . Routes::LOGIN_ROUTE); // Redireciona para a página de login
+                exit();
+            }
+
             $view = new GenericView();
             return $view->renderView($route);
         } 

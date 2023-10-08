@@ -17,18 +17,11 @@ class UserController {
         $this->userModel = new User(DBConnection::getInstance()->getConnection());
         $this->view = new GenericView();
     } 
-
+/*
     public function login($email, $password) {
         $authSuccess = $this->authenticate($email, $password);
         
         if ($authSuccess) {
-            $_SESSION['user'] = [
-                'email' => $this->userModel->getEmail(),
-                'id' => $this->userModel->getUserID(),
-                // Estou assumindo que você tenha um método 'getUserType()' na classe User
-                'type' => $this->userModel->getUserType()
-            ];
-
             // Redireciona para o dashboard
             $this->view->renderView('/perfil');
         } else {
@@ -39,7 +32,7 @@ class UserController {
             $this->view->renderView('/login');
         }
     }
-
+*/
     public function logout() {
         unset($_SESSION['user']);
         $this->view->renderView('/login');
@@ -76,13 +69,12 @@ class UserController {
     private function authenticate($email, $password) {
         $conditions = ['email' => $email];
         $user = $this->userModel->fetch('user', $conditions); 
-        
         if ($user && password_verify($password, $user['password'])) {
             $this->userModel->setUserID($user['user_id']);
             $this->userModel->setEmail($user['email']);
             $this->userModel->setPassword($user['password']);
             $this->userModel->setName($user['name']);
-            // a data de criação e modificação serão definidas dentro do modelo, quando os dados são carregados
+            $_SESSION['user'] = $user;
             return true;
         }
 
@@ -106,6 +98,7 @@ class UserController {
     
         if ($authSuccess) {
             echo json_encode(['success' => true]);
+
         } else {
             echo json_encode(['success' => false, 'message' => 'As credenciais fornecidas estão incorretas. Tente novamente.']);
         }

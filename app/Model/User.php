@@ -11,6 +11,7 @@ class User extends GenericModel {
     private $name;
     private $dateCreated;
     private $dateModified;
+    private $userType;
 
     // Construtor
     public function __construct($conn, $email = null, $password = null, $name = null) {
@@ -19,6 +20,7 @@ class User extends GenericModel {
         $this->password = $password ? $this->hashPassword($password) : null;
         $this->name = $name;
         $this->dateCreated = new \DateTime();
+        
     }
 
     // Getters e Setters
@@ -65,6 +67,10 @@ class User extends GenericModel {
 
     public function getDateModified() {
         return $this->dateModified;
+    }
+
+    public function getUserType() {
+        return $this->userType;
     }
 
     /**
@@ -175,12 +181,6 @@ class User extends GenericModel {
         $user = parent::fetch('user', $conditions); 
         
         if ($user && password_verify($password, $user['password'])) {
-            $this->userID = $user['user_ID'];
-            $this->email = $user['email'];
-            $this->password = $user['password'];
-            $this->name = $user['name'];
-            $this->dateCreated = new \DateTime($user['dateCreated']);
-            $this->dateModified = new \DateTime($user['dateModified']);
             return true;
         }
         return false;
@@ -211,7 +211,7 @@ class User extends GenericModel {
 
         // Criar um novo objeto User com os dados obtidos e retorná-lo
         $user = new self($this->conn, $userData['email'], $userData['password'], $userData['name']);
-        
+
         // Atribuir outras propriedades se necessário
         $user->setUserID($userData['user_id']);
    
