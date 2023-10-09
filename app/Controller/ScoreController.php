@@ -9,8 +9,8 @@ class ScoreController {
     private $scoreModel;
     
     /*
-    public function __construct() {
-        $this->scoreModel = new Score(DBConnection::getInstance()->getConnection());
+    public function __construct($user_id) {
+        $this->scoreModel = new Score($user_id);
     } 
     /*
 
@@ -31,6 +31,8 @@ class ScoreController {
                 $scoreModel->addPoints($points);
                 // ADD XP
                 $scoreModel->addExperience($points);
+                // Add pontos ao vendedor
+                $scoreModel->addPointsSeller($points);
                 // Retorna uma resposta de sucesso.
                 header('Content-Type: application/json');
                 echo json_encode(['status' => 'success', 'message' => 'Pontos adicionados com sucesso']);

@@ -154,4 +154,24 @@ class Score extends GenericModel
 
         return $this->insert(self::TABLE_NAME, $data);
     }
+
+    public function addPointsSeller($points)
+    {
+        // Verifica se o user_id está presente na sessão
+        if (isset($_SESSION['user']['user_id'])) {
+            $userId = $_SESSION['user']['user_id']; // Obtém o user_id da sessão
+            $userData = $this->fetch(self::TABLE_NAME, ['user_id' => $userId]); // Obtém os dados do usuário
+    
+            // Verifica se os dados do usuário foram encontrados
+            if ($userData) {
+                $userData['points'] += $points; // Adiciona os pontos ao total atual
+    
+                // Atualiza os pontos do usuário na tabela
+                return $this->update(self::TABLE_NAME, ['points' => $userData['points']], ['user_id' => $userId]);
+            } else {
+                // Retorna false se o registro do usuário não foi encontrado
+                return false;
+            }
+        } 
+    }
 }

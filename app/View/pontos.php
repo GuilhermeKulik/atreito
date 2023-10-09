@@ -27,7 +27,6 @@
             <div class="card">
                 <div class="card-body">
                     <p class='card-title'>Adicionar Pontos</p>
-                    <?php var_dump($_SESSION['user']);?>
                     <form id="pointsForm" method="POST">
                         <div class="mb-2">
                             <p class='form-label'> Quantidade de pontos <p>
