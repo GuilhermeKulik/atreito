@@ -75,6 +75,7 @@ class UserController {
             $this->userModel->setPassword($user['password']);
             $this->userModel->setName($user['name']);
             $_SESSION['user'] = $user;
+            $score = new Score($user['user_id']);
             return true;
         }
 

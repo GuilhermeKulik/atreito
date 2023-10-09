@@ -1,4 +1,9 @@
-<?php require 'app/Core/Component/Header.php'; ?>
+<?php 
+
+require 'app/Core/Component/Header.php'; 
+
+
+?>
 
 <title>Perfil - Atreito</title>
 </head>
@@ -24,20 +29,21 @@
                 <div class="card user-info-card">
                     <div class="card-body">
                         <h5 class="card-title">Minha conta</h5> <!-- Substitua pelo nome real do usuário -->
-                        <p class="form-label card-text">Email:</p><p>usuario@dominio.com</p> <!-- Substitua pelo email real do usuário -->
-                        <p class="form-label card-text">Celular:</p><p>(47) 989025192</p> <!-- Substitua pelo número de celular real do usuário -->
+                        <p class="form-label card-text">Email:</p> <?php echo $_SESSION['user']['email'];?></p> <!-- Substitua pelo email real do usuário -->
+                        <p class="form-label card-text">Celular:</p> <?php echo $_SESSION['user']['mobile_number'];?></p> <!-- Substitua pelo número de celular real do usuário -->
                     </div>
                 </div>
             </div>
         </div>
-   
+  <?php //var_dump($_SESSION['user']); ?>
 
         <!-- Card Total de Pontos -->
         <div class="col-12 col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Pontos</h5>
-                    <p class="card-text card-perfil-value" >700 <!-- Valor --></p>
+                    
+                    <h5 class="card-title">PONTOS</h5>
+                    <p class="card-text card-perfil-value" ><?php echo $_SESSION['score']['points'] ?> <!-- Valor --></p>
                 </div>
             </div>
         </div>

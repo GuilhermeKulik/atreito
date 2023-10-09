@@ -39,6 +39,7 @@ class Score extends GenericModel
             $this->lastUpdated = $userData['last_updated'];
             $this->streak = $userData['streak'];
             $this->highestStreak = $userData['highest_streak'];
+            $_SESSION['score'] = $userData;
         }
     }
 
@@ -51,6 +52,7 @@ class Score extends GenericModel
     {
         $this->points += $pointsToAdd; // Adiciona os pontos ao total atual.
         $this->updateScore(); // Atualiza o banco de dados com o novo total de pontos.
+        $_SESSION['score']['points'] += $pointsToAdd; // Atualiza o score da sessao =)
     }
 
     /**
