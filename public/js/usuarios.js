@@ -60,8 +60,8 @@ function displayUserResults(users) {
                 <div class="col-md-2">${user.name}</div>
                 <div class="col-md-3">${user.email}</div>
                 <div class="col-md-2"><a href="https://wa.me/${user.mobile_number.replace(/\D/g, '')}" target="_blank">${user.mobile_number}</a></div>
-                <div class="col-md-1"><a href="#"><i class="fa fa-cogs"></i></a></div>  <!-- ícone de configurações -->
-                <div class="col-md-1"><a href="#" class="text-danger"><i class="fa fa-times"></i></a></div>  <!-- ícone de "X" -->
+                <div class="col-md-1"><a href="#">X</a></div>  <!-- ícone de configurações -->
+                <div class="col-md-1"><a href="#" class="text-danger">X</i></a></div>  <!-- ícone de "X" -->
             </div>
         `;
 

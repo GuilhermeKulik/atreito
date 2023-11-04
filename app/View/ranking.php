@@ -1,78 +1,57 @@
-<?php require 'app/Core/Component/Header.php'; ?>
+<?php
+require_once __DIR__ . '/../Controller/ScoreController.php'; 
+
+$scoreController = new Atreito\Controller\ScoreController();
+$sellerRanking = $scoreController->getRankingSeller();
+
+require 'app/Core/Component/Header.php';
+?>
 <title>Ranking - Atreito</title>
 </head>
-
 <body>
+
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Menu Lateral -->
         <aside class="col-md-3 col-lg-2">
             <?php require 'app/Core/Component/Sidebar.php'; ?>
         </aside>
 
-        <!-- Conteúdo Principal -->
         <main id="main-content" class="col-12 col-md-9 col-lg-10">
-
-            <!-- Upper navbar -->
             <?php require 'app/Core/Component/Navbar-users.php'; ?>
 
             <div class="row">
-
-                <!-- Ranking Mensal -->
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Ranking Mensal</h5>
-                            <!-- Aqui você iria iterar sobre os dados dos usuários e criar um 'card' para cada um -->
-                            <?php
-                            // Exemplo de como os dados podem ser iterados (ajuste conforme seus dados reais)
-                            foreach ($monthlyRankingUsers as $user) {
-                                echo "
-                                <div class='card mb-2'>
-                                    <div class='card-body'>
-                                        <img src='' alt='User Image' class='rounded-circle' width='50' height='50'> <!-- Inserir URL da imagem -->
-                                        <p>{$user['name']}</p>
-                                        <p>Pontos: {$user['points']}</p>
-                                        <p>Colocação: {$user['ranking']}</p>
-                                    </div>
-                                </div>";
-                            }
-                            ?>
+                            <h5 class="card-title">Ranking dos Vendedores</h5>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Lugar</th>
+                                            <th>Nome</th>
+                                            <th>Total de Pontos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($sellerRanking as $index => $seller): ?>
+                                        <tr>
+                                            <td><?php echo $index + 1; ?></td>
+                                            <td><?php echo htmlspecialchars($seller['name']); ?></td>
+                                            <td><?php echo htmlspecialchars($seller['points']); ?></td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Ranking Anual -->
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Ranking Anual</h5>
-                            <!-- Aqui você iria iterar sobre os dados dos usuários e criar um 'card' para cada um -->
-                            <?php
-                            // Exemplo de como os dados podem ser iterados (ajuste conforme seus dados reais)
-                            foreach ($annualRankingUsers as $user) {
-                                echo "
-                                <div class='card mb-2'>
-                                    <div class='card-body'>
-                                        <img src='' alt='User Image' class='rounded-circle' width='50' height='50'> <!-- Inserir URL da imagem -->
-                                        <p>{$user['name']}</p>
-                                        <p>Pontos: {$user['points']}</p>
-                                        <p>Colocação: {$user['ranking']}</p>
-                                    </div>
-                                </div>";
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-
-            </div> <!-- Fecha row interna -->
+            </div>
         </main>
-
-    </div> <!-- fecha row principal -->
-</div> <!-- fecha container-fluid -->
-
-</body>
+    </div>
+</div>
 
 <?php require 'app/Core/Component/Footer.php'; ?>
+</body>
+</html>

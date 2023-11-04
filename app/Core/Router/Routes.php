@@ -17,8 +17,9 @@ class Routes {
     const CONFIG_ADMIN_ROUTE       = "/config-admin";
     const RANKING_ROUTE            = "/ranking";
     const VANTAGENS_ROUTE          = "/vantagens";
-    const LOGS_ROUTE               = "/logs";
+    const LOGS_ROUTE               = "/historico";
     const LOGOUT_ROUTE             = "/logout";
+    const PROMOS_ROUTE             = "/promocoes";
 
     // Caminhos dos arquivos de view correspondentes às rotas
     const LOGIN_VIEW              = self::VIEW_BASE_PATH . "login.php";              /* OK */
@@ -30,8 +31,9 @@ class Routes {
     const CONFIG_ADMIN_VIEW       = self::VIEW_BASE_PATH . "configuracoes.php";
     const RANKING_VIEW            = self::VIEW_BASE_PATH . "ranking.php";
     const VANTAGENS_VIEW          = self::VIEW_BASE_PATH . "vantagens.php";
-    const LOGS_VIEW               = self::VIEW_BASE_PATH . "logs.php";
+    const LOGS_VIEW               = self::VIEW_BASE_PATH . "historico.php";
     const LOGOUT_VIEW             = self::VIEW_BASE_PATH . "logout.php";
+    const PROMOS_VIEW             = self::VIEW_BASE_PATH . "promocoes.php";
 
     public static function getRoutesToViewsMap(): array {
         return [
@@ -46,7 +48,8 @@ class Routes {
             self::RANKING_ROUTE => self::RANKING_VIEW,
             self::VANTAGENS_ROUTE => self::VANTAGENS_VIEW,
             self::LOGS_ROUTE => self::LOGS_VIEW,
-            self::LOGOUT_ROUTE => self::LOGOUT_VIEW
+            self::LOGOUT_ROUTE => self::LOGOUT_VIEW,
+            self::PROMOS_ROUTE => self::PROMOS_VIEW
         ];
     }
 

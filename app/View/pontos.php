@@ -13,62 +13,67 @@
         </aside>
 
         <!-- Conteúdo Principal -->
-     <!-- Conteúdo Principal -->
-<!-- Conteúdo Principal -->
-<main id="main-content" class="col-12 col-md-9 col-lg-10">
+        <main id="main-content" class="col-12 col-md-9 col-lg-10 pt-3 pb-3">
 
-    <!-- Upper navbar -->
-    <?php require 'app/Core/Component/Navbar-users.php'; ?>
+            <!-- Upper navbar -->
+            <?php require 'app/Core/Component/Navbar-users.php'; ?>
 
-    <div class="row">
-
-        <!-- Card para Adicionar Pontos -->
-        <div class="col-lg-10 col-md-8 col-12 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <p class='card-title'>Adicionar Pontos</p>
-                    <form id="pointsForm" method="POST">
-                        <div class="mb-2">
-                            <p class='form-label'> Quantidade de pontos <p>
-                            <input type="number" class="points-input form-control" name="points" placeholder="Quantidade de pontos...">
+            <div class="row">
+                <!-- Card para Adicionar Pontos -->
+                <div class="col-lg-6 col-md-6 col-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class='card-title'>Adicionar Pontos</h5>
+                            <form id="addPointsForm" method="POST">
+                                <div class="mb-2">
+                                    <label for="points" class='form-label'> Quantidade de pontos </label>
+                                    <input type="number" class="form-control" id="points" name="points" placeholder="Quantidade de pontos...">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="userIdentification" class='form-label'> Código do cliente </label>
+                                    <input type="text" class="form-control" id="userIdentification" name="userIdentification" placeholder="Número de identificação do usuário...">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="adminIdentification" class='form-label'> Vendedor </label>
+                                    <input type="text" class="form-control" id="adminIdentification" value='<?php echo $_SESSION['user']['name']; ?>' disabled placeholder="Seu número de identificação...">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-2">
-                        <p class='form-label'> Codigo do cliente <p>
-                            <input type="text" class="user-identification-input form-control" name="userIdentification" placeholder="Número de identificação do usuário...">
-                        </div>
-                        <div class="mb-2">
-                        <p class='form-label'> Vendedor <p>
-                            <input type="text" class="admin-identification-input form-control" value='<?php echo $_SESSION['user']['name'];?>' disabled name="adminIdentification" placeholder="Seu número de identificação...">
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-login text-white assign-points-btn btn btn-light">Enviar</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Mini Perfil -->
-        <div class="col-lg-3 col-md-4 col-12 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-title">Usuario</p>
+                <!-- Card para Consumir Pontos -->
+                <div class="col-lg-6 col-md-6 col-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class='card-title'>Consumir Pontos</h5>
+                            <form id="consumePointsForm" method="POST">
+                                <div class="mb-2">
+                                    <label for="consumePoints" class='form-label'>Quantidade de pontos</label>
+                                    <input type="number" class="form-control" id="consumePoints" name="consumePoints" placeholder="Quantidade de pontos a consumir...">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="userConsumeIdentification" class='form-label'>Código do cliente</label>
+                                    <input type="text" class="form-control" id="userConsumeIdentification" name="userConsumeIdentification" placeholder="Número de identificação do usuário...">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="sellerIdentification" class='form-label'>Vendedor</label>
+                                    <input type="text" class="form-control" id="sellerIdentification" value='<?php echo $_SESSION['user']['name']; ?>' disabled placeholder="Seu número de identificação...">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-warning">Consumir</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div> <!-- Fecha row interna -->
+        </main>
 
-    </div> <!-- Fecha row interna -->
-</main>
-
-
-
-        <!-- Painel Adicional (trigado pelo js) -->
-        <section id="additional-panel" class="col-md-12 col-lg-3">
-            <!-- Conteúdo adicional aqui (trigado pelo js) -->
-        </section>
     </div> <!-- fecha row principal -->
 </div> <!-- fecha container-fluid -->
-
-</body>
 
 <?php require 'app/Core/Component/Footer.php'; ?>

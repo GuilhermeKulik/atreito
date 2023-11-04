@@ -4,6 +4,7 @@ namespace Atreito\Model;
 
 use \PDO;
 use \DateTime;
+use \LogScore;
 
 /**
  * Score Class
@@ -52,7 +53,7 @@ class Score extends GenericModel
     {
         $this->points += $pointsToAdd; // Adiciona os pontos ao total atual.
         $this->updateScore(); // Atualiza o banco de dados com o novo total de pontos.
-        $_SESSION['score']['points'] += $pointsToAdd; // Atualiza o score da sessao =)
+       
     }
 
     /**
@@ -173,5 +174,23 @@ class Score extends GenericModel
                 return false;
             }
         } 
+    }
+     /**
+     * Retrieves the ranking of sellers along with user names.
+     *
+     * @return array An array of user rankings.
+     */
+    public function getRanking()
+    {
+        $sql = "SELECT u.name, s.points
+                FROM score s
+                JOIN user u ON s.user_id = u.user_id
+                WHERE u.user_type = 'seller'
+                ORDER BY s.points DESC";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

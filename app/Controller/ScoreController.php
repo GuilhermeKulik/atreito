@@ -2,6 +2,7 @@
 namespace Atreito\Controller;
 
 use Atreito\Model\Score;
+use Atreito\Model\LogScore;
 use Atreito\Config\DBConnection;
 
 class ScoreController {
@@ -20,29 +21,60 @@ class ScoreController {
      * @return void
      */
     public function addPoints() {
-        if (isset($_POST['userId']) && isset($_POST['points'])) {
+        if (isset($_POST['userId']) && isset($_POST['points']) && isset($_SESSION['user']['user_id'])) {
             $userId = $_POST['userId'];
             $points = $_POST['points'];
+            $adminId = $_SESSION['user']['user_id']; // Obtendo adminId da sessão
     
             try {
                 // Obtém o modelo de pontuação do usuário.
                 $scoreModel = new Score($userId);
                 // Adiciona os pontos ao usuário.
                 $scoreModel->addPoints($points);
-                // ADD XP
+                
+                // Adiciona XP ao usuário.
                 $scoreModel->addExperience($points);
-                // Add pontos ao vendedor
+                // Adiciona pontos ao vendedor.
                 $scoreModel->addPointsSeller($points);
+                
+                // Cria e salva o log de transação.
+                $transactionDate = date("Y-m-d H:i:s");
+                $transactionType = 'add';
+                $logScore = new LogScore($transactionDate, $userId, $adminId, $transactionType, $points);
+                $logScore->save(); 
+    
+                // Atualiza a pontuação na sessão.
+                $_SESSION['score']['points'] += $points; 
+                // TODO: Arrumar bug interface.
+    
                 // Retorna uma resposta de sucesso.
                 header('Content-Type: application/json');
                 echo json_encode(['status' => 'success', 'message' => 'Pontos adicionados com sucesso']);
             } catch (Exception $e) {
                 // Retorna uma mensagem de erro se algo der errado.
+                header('Content-Type: application/json');
                 echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
             }
         } else {
-            // Retorna uma mensagem de erro se userId ou points não forem fornecidos.
-            echo json_encode(['status' => 'error', 'message' => 'UserId ou pontos não fornecidos']);
+            // Retorna uma mensagem de erro se userId, points ou adminId não forem fornecidos.
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'error', 'message' => 'UserId, pontos ou adminId não fornecidos']);
+        }
+    }
+
+        /**
+     * Get the seller ranking.
+     *
+     * @return array The ranking of sellers as an associative array.
+     */
+    public function getRankingSeller() {
+        try {
+
+            $scoreModel = new Score($_SESSION['user']['user_id']);
+            return $scoreModel->getRanking();
+        } catch (Exception $e) {
+            // Handle any exceptions that occur and return an error message.
+            return ['status' => 'error', 'message' => $e->getMessage()];
         }
     }
 }

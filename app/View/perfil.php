@@ -35,7 +35,7 @@ require 'app/Core/Component/Header.php';
                 </div>
             </div>
         </div>
-  <?php //var_dump($_SESSION['user']); ?>
+  <?php var_dump($_SESSION['score']); ?>
 
         <!-- Card Total de Pontos -->
         <div class="col-12 col-md-6">
