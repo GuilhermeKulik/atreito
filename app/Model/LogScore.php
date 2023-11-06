@@ -32,10 +32,10 @@ use Exception;
          * @param string $transactionType Tipo de transação realizada (por exemplo, "add" ou "consume").
          * @param int $pointsAmount       Quantidade de pontos envolvidos na transação.
          */
-        public function __construct($transactionDate, $clientId, $adminId, $transactionType, $pointsAmount)
+        public function __construct($clientId, $adminId, $transactionType, $pointsAmount)
         {
             parent::__construct();
-            $this->transactionDate = $transactionDate;
+            $this->transactionDate = date('Y-m-d H:i:s');
             $this->clientId = $clientId;
             $this->adminId = $adminId;
             $this->transactionType = $transactionType;

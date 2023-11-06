@@ -12,6 +12,7 @@ class User extends GenericModel {
     private $dateCreated;
     private $dateModified;
     private $userType;
+    private $cellphone;
 
     // Construtor
     public function __construct($conn, $email = null, $password = null, $name = null) {
@@ -47,6 +48,14 @@ class User extends GenericModel {
 
     public function getPassword() {
         return $this->password;
+    }
+
+    public function setUserCellphone($cellphone) {
+        $this->cellphone = $cellphone;
+    }
+
+    public function getPhone() {
+        return $this->cellphone;
     }
 
     public function setName($name) {
@@ -85,7 +94,6 @@ class User extends GenericModel {
      * @return int The ID of the newly created user.
      */
     public function createUser($name, $email, $cellphone, $password, $userType) {
-        // Verificando se todos os campos estão presentes
         if (!$name || !$email || !$password || !$cellphone || !$userType) {
             return [
                 'status' => 'error',
@@ -125,30 +133,36 @@ class User extends GenericModel {
      * Updates an existing user in the database.
      * 
      * @param int $userID The ID of the user to be updated.
-     * @param array $newData New data for update (email, password, name).
+     * @param array $newData New data for update (email, password, name, phone).
      * @return int Returns the number of rows affected by the operation.
      */
     public function updateUser($userID, $newData) {
         $data = [];
-    
+        
         if(isset($newData['email'])) {
             $data['email'] = $newData['email'];
             $this->email = $newData['email'];
         }
-    
-        if(isset($newData['password'])) {
+
+        if(isset($newData['password']) && !empty($newData['password'])) {
             $data['password'] = $this->hashPassword($newData['password']);
-            $this->password = $this->hashPassword($newData['password']);
+            $this->password = $data['password'];
         }
-    
+        
         if(isset($newData['name'])) {
             $data['name'] = $newData['name'];
             $this->name = $newData['name'];
         }
-    
+        
+        if(isset($newData['mobile_number'])) {
+            $data['mobile_number'] = $newData['mobile_number'];
+            $this->cellphone = $newData['mobile_number'];
+        }
+        
         $conditions = ['user_id' => $userID];
         return parent::update('user', $data, $conditions); 
     }
+
     
     /**
      * Deletes a user from the database.
@@ -165,7 +179,6 @@ class User extends GenericModel {
             return $userID;
         }
         
-        // Se nada foi excluído (por exemplo, o usuário não existia), você pode retornar null ou lançar uma exceção.
         return null;
     }
 
@@ -212,8 +225,9 @@ class User extends GenericModel {
         // Criar um novo objeto User com os dados obtidos e retorná-lo
         $user = new self($this->conn, $userData['email'], $userData['password'], $userData['name']);
 
-        // Atribuir outras propriedades se necessário
+        // Atribuir outras propriedades
         $user->setUserID($userData['user_id']);
+        $user->setUserCellphone($userData['mobile_number']);
    
         return $user;
     }
@@ -250,7 +264,7 @@ class User extends GenericModel {
         ];
     
         try {
-            // Aqui usamos fetchAll porque queremos obter todos os resultados que correspondem à pesquisa
+            // Aqui fetchAll porque quero obter todos os resultados que correspondem à pesquisa
             return $this->fetchAll('user', $conditions);
         } catch (Exception $e) {
             throw new Exception("Erro ao buscar usuários: " . $e->getMessage());

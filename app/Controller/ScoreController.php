@@ -77,4 +77,51 @@ class ScoreController {
             return ['status' => 'error', 'message' => $e->getMessage()];
         }
     }
+
+    public function getUserPoints($userId) {
+        $scoreModel = new Score($userId);
+        $points = $scoreModel->getPoints();
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'success', 'points' => $points]);
+    }
+
+
+    /**
+     * Consume points from a user's score.
+     * Ensures required data is present, 
+     * checks if the user has enough points,
+     * performs the transaction, and logs it.
+     *
+     * @return void Outputs JSON indicating success or failure.
+     */
+    public function consumePoints() {
+        if (isset($_POST['userId']) && isset($_POST['points'])) {
+            $userId = $_POST['userId'];
+            $pointsToConsume = $_POST['points'];
+            $adminId = $_SESSION['user']['user_id']; 
+
+            $scoreModel = new Score($userId);
+            $currentPoints = $scoreModel->getPoints();
+
+            if ($currentPoints !== false && $currentPoints >= $pointsToConsume) {
+                $scoreModel->consumePoints($pointsToConsume); 
+
+                $transactionDate = date('Y-m-d H:i:s'); 
+                $transactionType = 'consume'; 
+                
+                $logScore = new LogScore($userId, $adminId, $transactionType, $pointsToConsume);
+                $logScore->save(); // Salvando log da transação =) pai é brabo né
+                header('Content-Type: application/json');
+                echo json_encode(['status' => 'success', 'message' => 'Pontos consumidos com sucesso.']);
+            } else {
+                $errorMsg = $currentPoints === false ? 'Erro ao processar.' : 'Pontos insuficientes.';
+                echo json_encode(['status' => 'error', 'message' => $errorMsg]);
+            }
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Erro ao processar. Informações incompletas ou inválidas.']);
+        }
+        exit;
+    }
+
+
 }

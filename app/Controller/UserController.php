@@ -199,4 +199,83 @@ class UserController {
             exit;
         }
     }
+
+    /**
+     * Fetches user data by ID and returns it as a JSON response.
+      */
+    public function getUserByIdJson() {
+        if (isset($_POST['userId'])) {
+            $userId = $_POST['userId'];
+            $user = $this->userModel->getUserById($userId);
+            header('Content-Type: application/json');
+            if ($user) {
+                $userData = [
+                    'name' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'mobile_number' => $user->getPhone()
+                ];
+                echo json_encode([
+                    'status' => 'success',
+                    'data' => $userData
+                ]);
+            } else {
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Usuário não encontrado.'
+                ]);
+            }
+            } else {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Codigo de usuário não fornecido.'
+            ]);
+        }
+        exit;
+    }  
+
+
+    public function updateUserInfo() {
+        if ($_POST['password'] !== $_POST['confirmPassword']) {
+            header('Content-Type: application/json');
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Os campos de senha não estão iguais.'
+            ]);
+            exit;
+        }
+
+        $newData = [];
+        $userId = $_POST['editUserId'];
+
+        if (!empty($_POST['name'])) {
+            $newData['name'] = $_POST['name'];
+        }
+        if (!empty($_POST['email'])) {
+            $newData['email'] = $_POST['email'];
+        }
+        if (!empty($_POST['password'])) {
+            $newData['password'] = $_POST['password']; 
+        }
+        if (!empty($_POST['cellphone'])) {
+            $newData['mobile_number'] = $_POST['cellphone']; 
+        }
+
+        $updateCount = $this->userModel->updateUser($userId, $newData);
+
+        header('Content-Type: application/json');
+
+        if ($updateCount > 0) {
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'Dados atualizados com sucesso.'
+            ]);
+        } else {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Erro ao atualizar.'
+            ]);
+        }
+        exit;
+    }  
+
 }

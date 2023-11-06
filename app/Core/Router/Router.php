@@ -11,7 +11,7 @@ class Router
     private $controllerRoutes = [];
     private $publicRoutes = [
         Routes::LOGIN_ROUTE,
-        '/login-ajax' // adicione outras rotas públicas conforme necessário
+        '/login-ajax' 
     ];
 
     public function __construct() 

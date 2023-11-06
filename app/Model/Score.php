@@ -32,6 +32,7 @@ class Score extends GenericModel
         parent::__construct($userId);
         $this->userId = $userId;
 
+        // inicia o objeto score com os dados do usuario
         $userData = $this->fetch(self::TABLE_NAME, ['user_id' => $userId]);
         if ($userData) {
             $this->xpPoints = $userData['xp_points'];
@@ -40,8 +41,12 @@ class Score extends GenericModel
             $this->lastUpdated = $userData['last_updated'];
             $this->streak = $userData['streak'];
             $this->highestStreak = $userData['highest_streak'];
-            $_SESSION['score'] = $userData;
+            //$_SESSION['score'] = $userData;
         }
+    }
+
+    public function getPoints() {
+        return $this->points;
     }
 
     /**
@@ -192,5 +197,19 @@ class Score extends GenericModel
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    /** TESTAR */
+        /**
+     * Obtém a quantidade atual de pontos de um usuário específico.
+     *
+     * @param int $userId O ID do usuário para consulta.
+     * @return mixed A quantidade de pontos do usuário ou falso se não encontrado.
+     */
+    public function getCurrentPoints($userId) {
+        // Buscar no banco de dados a quantidade de pontos para o userId fornecido.
+        $userData = $this->fetch(self::TABLE_NAME, ['user_id' => $userId]);
+        
+        // Se userData for encontrado, retorna os pontos, caso contrário, retorna falso.
+        return $userData ? $userData['points'] : false;
     }
 }

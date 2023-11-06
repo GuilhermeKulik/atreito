@@ -16,7 +16,7 @@
         <main id="main-content" class="col-12 col-md-9 col-lg-10 pt-3 pb-3">
 
             <!-- Upper navbar -->
-            <?php require 'app/Core/Component/Navbar-users.php'; ?>
+            <?php // require 'app/Core/Component/Navbar-users.php'; ?>
 
             <div class="row">
                 <!-- Card para Adicionar Pontos -->

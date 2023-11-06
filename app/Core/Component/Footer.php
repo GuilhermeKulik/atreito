@@ -4,6 +4,8 @@
     <script src="/public/js/cadastro_usuario.js"></script>
     <script src="/public/js/usuarios.js"></script>
     <script src="/public/js/pontos.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+    <!-- Bootstrap Bundle JS -->
+    <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </footer>
+
 </html>
