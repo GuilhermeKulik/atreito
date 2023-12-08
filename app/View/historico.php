@@ -1,4 +1,13 @@
-<?php require 'app/Core/Component/Header.php'; ?>
+<?php 
+require 'app/Core/Component/Header.php';
+use Atreito\Model\LogScore;
+
+// Criando uma instância da classe LogScore
+$logScoreModel = new LogScore();
+
+// Obtendo os logs
+$logs = $logScoreModel->getLogs();
+?>
 
 <title>Histórico - Atreito</title>
 </head>
@@ -12,10 +21,11 @@
 
             <!-- Conteúdo Principal -->
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <!-- Cabeçalho e outros elementos -->
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Histórico</h1>
                 </div>
-                
+
                 <!-- Tabela de Histórico -->
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
@@ -30,19 +40,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- As linhas da tabela serão adicionadas aqui dinamicamente -->
+                            <?php foreach ($logs as $log): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($log['log_id']); ?></td>
+                                    <td><?php echo htmlspecialchars($log['transaction_date']); ?></td>
+                                    <td><?php echo htmlspecialchars($log['client_id']); ?></td>
+                                    <td><?php echo htmlspecialchars($log['admin_id']); ?></td>
+                                    <td><?php echo htmlspecialchars($log['transaction_type']); ?></td>
+                                    <td><?php echo htmlspecialchars($log['points_amount']); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
-
             </main>
         </div>
     </div>
 
     <?php require 'app/Core/Component/Footer.php'; ?>
 
-    <!-- Opção de incluir jQuery e Bootstrap JS localmente ou através de uma CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

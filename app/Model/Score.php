@@ -49,6 +49,10 @@ class Score extends GenericModel
         return $this->points;
     }
 
+    public function getXpPoints() {
+        return $this->xpPoints;
+    }
+
     /**
      * Adiciona pontos ao usuário.
      *
@@ -161,6 +165,18 @@ class Score extends GenericModel
         return $this->insert(self::TABLE_NAME, $data);
     }
 
+    /**
+     * Adds points and experience points (XP) to a seller's total.
+     *
+     * This method increases both the 'points' and 'xp_points' for a seller
+     * in the corresponding database table.
+     *
+     * @param int $points Number of points to add.
+     * @return mixed Number of affected rows on successful update, or false
+     * if user record not found or user_id not in session.
+     * @throws Exception on update method failure.
+     */
+
     public function addPointsSeller($points)
     {
         // Verifica se o user_id está presente na sessão
@@ -171,15 +187,24 @@ class Score extends GenericModel
             // Verifica se os dados do usuário foram encontrados
             if ($userData) {
                 $userData['points'] += $points; // Adiciona os pontos ao total atual
+                $userData['xp_points'] += $points; // Adiciona os pontos de XP ao total atual
     
-                // Atualiza os pontos do usuário na tabela
-                return $this->update(self::TABLE_NAME, ['points' => $userData['points']], ['user_id' => $userId]);
+                // Atualiza os pontos e os pontos de XP do usuário na tabela
+                return $this->update(
+                    self::TABLE_NAME, 
+                    [
+                        'points' => $userData['points'],
+                        'xp_points' => $userData['xp_points'] // Inclui os xp_points na atualização
+                    ], 
+                    ['user_id' => $userId]
+                );
             } else {
                 // Retorna false se o registro do usuário não foi encontrado
                 return false;
             }
         } 
     }
+
      /**
      * Retrieves the ranking of sellers along with user names.
      *
@@ -198,7 +223,7 @@ class Score extends GenericModel
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    /** TESTAR */
+
         /**
      * Obtém a quantidade atual de pontos de um usuário específico.
      *
@@ -211,5 +236,31 @@ class Score extends GenericModel
         
         // Se userData for encontrado, retorna os pontos, caso contrário, retorna falso.
         return $userData ? $userData['points'] : false;
+    }
+
+    public function getUserScore($userId)
+    {
+        $table = 'score';
+        $conditions = ['user_id' => $userId];
+    
+        try {
+            $scoreData = $this->fetch($table, $conditions);
+    
+            if ($scoreData) {
+                $this->userId = $userId;
+                $this->points = $scoreData['points'];
+                $this->xpPoints = $scoreData['xp_points'];
+    
+                return [
+                    'user_id' => $this->userId,
+                    'points' => $this->points,
+                    'xp_points' => $this->xpPoints,
+                ];
+            } else {
+                return [];
+            }
+        } catch (Exception $e) {
+            throw new Exception("Error retrieving user score: " . $e->getMessage());
+        }
     }
 }

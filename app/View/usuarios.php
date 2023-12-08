@@ -22,7 +22,7 @@
                         </div>
                         <div class="modal-body">
                             <form id="edit-user-form">
-                            <input type="hidden" id="editUserId" name="editUserId" value="">
+                            <input type="hidden" id="editUserId" name="userId" value="">
 
                                 <!-- Campo de Nome -->
                                 <div class="mb-3">

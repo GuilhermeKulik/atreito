@@ -15,7 +15,7 @@ $(document).ready(function() {
             type: 'POST',
             url: '/results-user',
             data: {
-                term: searchTerm,   // Alterado para "term" para corresponder ao seu back-end
+                term: searchTerm,   
                 filter: selectedFilter
             },
             dataType: 'json',
@@ -27,7 +27,7 @@ $(document).ready(function() {
                 }
             },
             error: function(error) {
-                // Aqui você pode tratar erros da requisição.
+                // tratar erros da requisição.
                 console.error("Erro ao buscar usuários: ", error);
             }
         });
@@ -68,33 +68,35 @@ function displayUserResults(users) {
 }
 
 $(document).ready(function() {
-    $(document).on('click', 'a[data-bs-toggle="modal"]', function() {
-        
-        var userId = $(this).data('user-id');
+    $('#edit-user-form').on('submit', function(e) {
+        e.preventDefault(); 
+        var formData = $(this).serialize(); //Serializa os dados do formulário para envio
+
+        //Faz a requisição AJAX para a URL de edição do usuário
         $.ajax({
             type: 'POST',
-            url: '/get-user',
-            data: { userId: userId },
-            dataType: 'json',
+            url: '/user-edit-send', // URL para onde o formulário será enviado
+            data: formData, // dados do formulário serializados para envio
+            dataType: 'json', // espera resposta em JSON
             success: function(response) {
-                if (response.status === 'error') {
-                    toastr.error(response.message); 
+                // Processa a resposta em caso de sucesso
+                if (response.status === 'success') {
+                    toastr.success(response.message); // Exibe uma notificação de sucesso
+                    $('#userEditModal').modal('hide'); // Esconde o modal de edição
                 } else {
-                    $('#userEditModal #editName').val(response.data.name);
-                    $('#userEditModal #editEmail').val(response.data.email);
-                    $('#userEditModal #editPhone').val(response.data.mobile_number);
-                    $('#userEditModal #editUserId').val(userId);
-                    // Mostrar o modal depois que os dados foram preenchidos =) pai é brabo né
-                    $('#userEditModal').modal('show');
+                    toastr.error(response.message); 
                 }
             },
-            error: function(request, status, error) {
-                toastr.error(error); 
+            error: function(xhr, status, error) {
+                // Processa erros na requisição AJAX
+                console.error("Erro ao processar a solicitação: " + error); 
             }
         });
-        $('#userEditModal').modal('show');
     });
 });
+
+
+
 
 $(document).ready(function() {
     // Edit user click handler
@@ -113,7 +115,7 @@ $(document).ready(function() {
                     $('#userEditModal #editName').val(user.name);
                     $('#userEditModal #editEmail').val(user.email);
                     $('#userEditModal #editPhone').val(user.mobile_number);
-                    $('#userEditModal #editUserId').val(user.id);
+                    $('#userEditModal #editUserId').val(user.userId);
                     $('#userEditModal').modal('show');
                 }
             },
@@ -123,35 +125,7 @@ $(document).ready(function() {
         });
     });
 
-    // Delete user click handler
-    $(document).on('click', 'a.delete-user-btn', function(event) {
-        event.preventDefault();
-        var userId = $(this).data('user-id');
-        $.ajax({
-            type: 'POST',
-            url: '/get-user',
-            data: { userId: userId },
-            dataType: 'json',
-            success: function(response) {
-                if (response.status === 'success') {
-                    var user = response.data;
-                    $('#userDeleteModal #userInfo').html(
-                        `<p>Tem certeza de que deseja excluir o seguinte usuário?</p>
-                        <p>Nome: ${user.name}</p>
-                        <p>Email: ${user.email}</p>
-                        <p>Telefone: ${user.phone}</p>`
-                    );
-                    $('#confirmDelete').data('user-id', userId); 
-                    $('#userDeleteModal').modal('show');
-                } else {
-                    toastr.error("Erro ao obter dados do usuário para exclusão.");
-                }
-            },
-            error: function(request, status, error) {
-                toastr.error("Error: " + error);
-            }
-        });
-    });
+ 
 
     // Confirm delete user handler
     $('#confirmDelete').click(function() {
@@ -181,7 +155,7 @@ function triggerDeleteUserModal(userIdFieldSelector) {
     var userId = $(userIdFieldSelector).val(); // Obtem o ID do usuário do campo oculto no modal de edição.
 
     // Configura o texto ou dados do usuário no modal de exclusão e abre o modal de exclusão.
-    $('#userDeleteModal').find('#userInfo').html("Tem certeza que deseja excluir o usuário com ID " + userId + "?");
+    $('#userDeleteModal').find('#userInfo').html("Tem certeza que deseja excluir o usuário?");
 
     // Somente mostra o modal de exclusão, não esconde o modal de edição.
     $('#userDeleteModal').modal('show');

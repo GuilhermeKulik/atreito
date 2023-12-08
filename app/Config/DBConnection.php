@@ -14,7 +14,7 @@ class DBConnection
     const DB_HOST = 'localhost';
     const DB_NAME = 'atreito';
     const DB_USER = 'root';
-    const DB_PASS = '123';
+    const DB_PASS = 'Lhtg4019';
 
     // O construtor agora é privado, para impedir que se possa instanciar a classe diretamente.
     private function __construct($host = self::DB_HOST, $dbname = self::DB_NAME, $username = self::DB_USER, $password = self::DB_PASS)

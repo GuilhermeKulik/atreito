@@ -1,5 +1,6 @@
 <?php require 'app/Core/Component/Header.php'; ?>
 <?php include 'app/Core/Component/Modal_search_user.php'; ?>
+
 <title>Pontos - Atreito</title>
 </head>
 
@@ -23,10 +24,10 @@
                 <div class="col-lg-6 col-md-6 col-12 mb-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class='card-title'>Adicionar Pontos</h5>
+                            <h5 class='card-title'>Adicionar Moedas</h5>
                             <form id="addPointsForm" method="POST">
                                 <div class="mb-2">
-                                    <label for="points" class='form-label'> Quantidade de pontos </label>
+                                    <label for="points" class='form-label'> Quantidade </label>
                                     <input type="number" class="form-control" id="points" name="points" placeholder="Quantidade de pontos...">
                                 </div>
                                 <div class="mb-2">
@@ -49,10 +50,10 @@
                 <div class="col-lg-6 col-md-6 col-12 mb-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class='card-title'>Consumir Pontos</h5>
+                            <h5 class='card-title'>Consumir Moedas</h5>
                             <form id="consumePointsForm" method="POST">
                                 <div class="mb-2">
-                                    <label for="consumePoints" class='form-label'>Quantidade de pontos</label>
+                                    <label for="consumePoints" class='form-label'>Quantidade</label>
                                     <input type="number" class="form-control" id="consumePoints" name="consumePoints" placeholder="Quantidade de pontos a consumir...">
                                 </div>
                                 <div class="mb-2">

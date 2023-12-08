@@ -63,21 +63,25 @@ class Promotion extends GenericModel {
         return $this->createdByUserID;
     }
 
-    public function createPromotion($name, $value, $creationDate, $expirationDate, $createdByUserID) {
+    public function createPromotion($name, $value, $expirationDate, $category, $level, $createdByUserID) {
         $this->name = $name;
         $this->value = $value;
-        $this->creationDate = $creationDate;
+        $this->creationDate = date('Y-m-d H:i:s'); // Data e hora atuais
         $this->expirationDate = $expirationDate;
+        $this->category = $category;
+        $this->level = $level;
         $this->createdByUserID = $createdByUserID;
-
+    
         $data = [
             'name' => $this->name,
             'value' => $this->value,
             'creation_date' => $this->creationDate,
             'expiration_date' => $this->expirationDate,
+            'category' => $this->category,
+            'level' => $this->level,
             'created_by_user_id' => $this->createdByUserID
         ];
-
+    
         return parent::insert('promotion', $data);
     }
 

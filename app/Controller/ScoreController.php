@@ -40,7 +40,7 @@ class ScoreController {
                 // Cria e salva o log de transação.
                 $transactionDate = date("Y-m-d H:i:s");
                 $transactionType = 'add';
-                $logScore = new LogScore($transactionDate, $userId, $adminId, $transactionType, $points);
+                $logScore = new LogScore($userId, $adminId, $transactionType, $points);
                 $logScore->save(); 
     
                 // Atualiza a pontuação na sessão.
@@ -69,20 +69,17 @@ class ScoreController {
      */
     public function getRankingSeller() {
         try {
+            // Cria uma instância de LogScore com a conexão ao banco de dados
+            $logScoreModel = new LogScore(DBConnection::getInstance()->getConnection());
+            
+            // Obtém o ranking dos vendedores para o mês atual
+            $sellerRanking = $logScoreModel->getSellersRankingThisMonth();
 
-            $scoreModel = new Score($_SESSION['user']['user_id']);
-            return $scoreModel->getRanking();
+            return ['status' => 'success', 'ranking' => $sellerRanking];
         } catch (Exception $e) {
-            // Handle any exceptions that occur and return an error message.
+            // Manipula exceções ocorridas e retorna uma mensagem de erro
             return ['status' => 'error', 'message' => $e->getMessage()];
         }
-    }
-
-    public function getUserPoints($userId) {
-        $scoreModel = new Score($userId);
-        $points = $scoreModel->getPoints();
-        header('Content-Type: application/json');
-        echo json_encode(['status' => 'success', 'points' => $points]);
     }
 
 
@@ -110,7 +107,9 @@ class ScoreController {
                 $transactionType = 'consume'; 
                 
                 $logScore = new LogScore($userId, $adminId, $transactionType, $pointsToConsume);
-                $logScore->save(); // Salvando log da transação =) pai é brabo né
+                $logScore->save(); // Salvando log da transação 
+                $_SESSION['score']['points'] -= $pointsToConsume; 
+
                 header('Content-Type: application/json');
                 echo json_encode(['status' => 'success', 'message' => 'Pontos consumidos com sucesso.']);
             } else {
@@ -123,5 +122,10 @@ class ScoreController {
         exit;
     }
 
+    public function getUserXpPoints($userId) {
+        $scoreModel = new Score($userId);
+        return $scoreModel->getXpPoints();
+    }
+    
 
 }

@@ -76,6 +76,7 @@ class UserController {
             $this->userModel->setName($user['name']);
             $_SESSION['user'] = $user;
             $score = new Score($user['user_id']);
+            $_SESSION['score'] = $score->getUserScore($user['user_id']);
             return true;
         }
 
@@ -126,14 +127,14 @@ class UserController {
             ]);
             exit;  // Encerrar a execução após enviar a resposta
         }
-        //Pegano do post 
+        //Pegando do post 
         $name = $_POST['name'];
         $email = $_POST['email'];
         $cellphone = $_POST['cellphone'];
         $userType = $_POST['userType'];
         $password = $_POST['password'];
 
-        //insere o jovem
+        //insere o usuário
         $result = $this->userModel->createUser($name, $email, $cellphone, $password, $userType);
         
         //se for númerico é pq adicionou no banco, criar o score do jogador =)
@@ -142,9 +143,6 @@ class UserController {
             $score->createScoreForUser($result);
         }
     
-        // TODO: Log the user creation here.
-    
-        // TODO: Send confirmation either by email or WhatsApp Web.
         header('Content-Type: application/json');
         if (is_numeric($result)) {
             echo json_encode([
@@ -173,7 +171,6 @@ class UserController {
             echo json_encode($users);
             exit;
         } else {
-            // Handle error or just render an empty list
             echo json_encode(['error' => 'Termo de busca não fornecido.']);
             exit;
         }
@@ -212,7 +209,8 @@ class UserController {
                 $userData = [
                     'name' => $user->getName(),
                     'email' => $user->getEmail(),
-                    'mobile_number' => $user->getPhone()
+                    'mobile_number' => $user->getPhone(),
+                    'userId' => $userId
                 ];
                 echo json_encode([
                     'status' => 'success',
@@ -245,7 +243,7 @@ class UserController {
         }
 
         $newData = [];
-        $userId = $_POST['editUserId'];
+        $userId = $_POST['userId'];
 
         if (!empty($_POST['name'])) {
             $newData['name'] = $_POST['name'];
@@ -257,7 +255,7 @@ class UserController {
             $newData['password'] = $_POST['password']; 
         }
         if (!empty($_POST['cellphone'])) {
-            $newData['mobile_number'] = $_POST['cellphone']; 
+            $newData['cellphone'] = $_POST['cellphone']; 
         }
 
         $updateCount = $this->userModel->updateUser($userId, $newData);
@@ -277,5 +275,31 @@ class UserController {
         }
         exit;
     }  
+
+    /**
+     * Deletes a user from the database by ID.
+     *
+     * @param int $userID The user's ID to be deleted.
+     * @return array An associative array with the status of the operation and a message.
+     */
+    public function deleteUserById($userID) {
+        // Call the generic delete method from the GenericModel.
+        $deletedCount = $this->userModel->delete('user', ['user_id' => $userID]);
+
+        header('Content-Type: application/json');
+        // Check if any row was actually deleted.
+        if ($deletedCount > 0) {
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'Usuário excluído com sucesso.'
+            ]);
+        } else {
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Erro ao excluir usuário ou usuário não encontrado.'
+            ]);
+        }
+        exit;
+    }
 
 }

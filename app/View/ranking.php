@@ -17,11 +17,11 @@ require 'app/Core/Component/Header.php';
         </aside>
 
         <main id="main-content" class="col-12 col-md-9 col-lg-10">
-            <?php require 'app/Core/Component/Navbar-users.php'; ?>
+            
 
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card" style='margin-top: 20px'>
                         <div class="card-body">
                             <h5 class="card-title">Ranking dos Vendedores</h5>
                             <div class="table-responsive">
@@ -51,6 +51,8 @@ require 'app/Core/Component/Header.php';
         </main>
     </div>
 </div>
+
+<?php var_dump($sellerRanking); ?>
 
 <?php require 'app/Core/Component/Footer.php'; ?>
 </body>

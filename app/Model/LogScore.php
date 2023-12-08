@@ -21,18 +21,19 @@ use Exception;
     
         const TABLE_NAME = "log_score";
     
+
         /**
          * Construtor da classe LogScore.
          *
-         * Inicializa um novo objeto LogScore com os dados fornecidos.
+         * Inicializa um novo objeto LogScore. Se os parâmetros forem fornecidos,
+         * eles serão usados para inicializar as propriedades do objeto.
          *
-         * @param string $transactionDate Data da transação.
-         * @param int $clientId           ID do cliente associado à transação.
-         * @param int $adminId            ID do administrador que realizou a transação.
-         * @param string $transactionType Tipo de transação realizada (por exemplo, "add" ou "consume").
-         * @param int $pointsAmount       Quantidade de pontos envolvidos na transação.
+         * @param int|null $clientId ID do cliente associado à transação (opcional).
+         * @param int|null $adminId ID do administrador que realizou a transação (opcional).
+         * @param string|null $transactionType Tipo de transação realizada (opcional).
+         * @param int|null $pointsAmount Quantidade de pontos envolvidos na transação (opcional).
          */
-        public function __construct($clientId, $adminId, $transactionType, $pointsAmount)
+        public function __construct($clientId = null, $adminId = null, $transactionType = null, $pointsAmount = null)
         {
             parent::__construct();
             $this->transactionDate = date('Y-m-d H:i:s');
@@ -63,7 +64,45 @@ use Exception;
             return $this->insert(self::TABLE_NAME, $data);
         }
     
+    /**
+     * Retrieves a ranking of sellers based on the total sum of points added in transactions.
+     *
+     * This method performs a SQL JOIN between the `log_score` and `user` tables,
+     * filtering by the user type as 'seller' and transaction type as 'ADD'.
+     * It includes transactions for the current month and orders the results
+     * by the total sum of points in descending order.
+     * 
+     * @return array An associative array containing the ranking of sellers.
+     * @throws Exception Throws an exception if an error occurs during the database query.
+     */
+    public function getSellersRankingThisMonth() {
+        try {
+            // Obtém o primeiro dia do mês atual em formato 'YYYY-MM-DD'
+            $firstDayOfMonth = date('Y-m-01');
+            // Obtém o último dia do mês atual em formato 'YYYY-MM-DD'
+            $lastDayOfMonth = date('Y-m-t');
     
+            $sql = "SELECT 
+                        u.name AS seller_name, 
+                        SUM(ls.points_amount) AS total_points
+                    FROM log_score ls
+                    JOIN user u ON ls.admin_id = u.user_id
+                    WHERE ls.transaction_type = 'ADD'
+                        AND u.user_type = 'seller'
+                        AND ls.transaction_date >= :firstDayOfMonth
+                        AND ls.transaction_date <= :lastDayOfMonth
+                    GROUP BY u.user_id
+                    ORDER BY total_points DESC";
+    
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(['firstDayOfMonth' => $firstDayOfMonth, 'lastDayOfMonth' => $lastDayOfMonth]);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            throw new Exception("Error in retrieving seller ranking: " . $e->getMessage());
+        }
+    }
+    
+
 
     /**
      * Log a transaction.
@@ -162,5 +201,27 @@ use Exception;
         $stmt->execute(['year' => $year]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result['total_points'] ?? 0;
+    }
+
+
+    /**
+     * Get all log records from the system.
+     *
+     * Retrieves a complete list of log entries from the database
+     * and returns them as an associative array.
+     *
+     * @return array An associative array containing all log records.
+     */
+    public function getLogs()
+    {
+        try {
+            // SQL query to fetch all records from log_score table
+            $sql = "SELECT * FROM " . self::TABLE_NAME . " ORDER BY transaction_date DESC";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            throw new Exception("Erro ao buscar logs: " . $e->getMessage());
+        }
     }
 }
