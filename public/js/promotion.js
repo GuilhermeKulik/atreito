@@ -30,3 +30,28 @@ $(document).ready(function() {
         });
     });
 });
+
+$(document).ready(function() {
+    $('#confirm-delete-promotion').click(function() {
+        var promotionId = $('#promotion-id').val();
+        
+        $.ajax({
+            url: '/delete-promotion',
+            type: 'POST',
+            data: { promotion_id: promotionId },
+            dataType: 'json',
+            success: function(response) {
+                if(response.status === 'success') {
+                    toastr.success('Promoção removida com sucesso.');
+                    // Recarregar 
+                    window.location.reload();
+                } else {
+                    toastr.error('Erro ao remover promoção: ' + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                toastr.error('Ocorreu um erro ao processar sua solicitação.');
+            }
+        });
+    });
+});

@@ -82,20 +82,9 @@ use Exception;
             // Obtém o último dia do mês atual em formato 'YYYY-MM-DD'
             $lastDayOfMonth = date('Y-m-t');
     
-            $sql = "SELECT 
-                        u.name AS seller_name, 
-                        SUM(ls.points_amount) AS total_points
-                    FROM log_score ls
-                    JOIN user u ON ls.admin_id = u.user_id
-                    WHERE ls.transaction_type = 'ADD'
-                        AND u.user_type = 'seller'
-                        AND ls.transaction_date >= :firstDayOfMonth
-                        AND ls.transaction_date <= :lastDayOfMonth
-                    GROUP BY u.user_id
-                    ORDER BY total_points DESC";
-    
+            $sql = "SELECT u.name AS seller_name, SUM(ls.points_amount) AS total_points FROM log_score ls JOIN user u ON ls.admin_id = u.user_id WHERE ls.transaction_type = 'ADD' AND u.user_type = 'seller' GROUP BY u.user_id ORDER BY total_points DESC";                  
             $stmt = $this->conn->prepare($sql);
-            $stmt->execute(['firstDayOfMonth' => $firstDayOfMonth, 'lastDayOfMonth' => $lastDayOfMonth]);
+            $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             throw new Exception("Error in retrieving seller ranking: " . $e->getMessage());

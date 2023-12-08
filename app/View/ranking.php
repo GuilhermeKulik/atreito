@@ -37,8 +37,8 @@ require 'app/Core/Component/Header.php';
                                         <?php foreach ($sellerRanking as $index => $seller): ?>
                                         <tr>
                                             <td><?php echo $index + 1; ?></td>
-                                            <td><?php echo htmlspecialchars($seller['name']); ?></td>
-                                            <td><?php echo htmlspecialchars($seller['points']); ?></td>
+                                            <td><?php echo $seller['seller_name']; ?></td>
+                                            <td><?php echo $seller['total_points']; ?></td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>

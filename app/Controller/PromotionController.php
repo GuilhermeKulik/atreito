@@ -73,9 +73,22 @@ class PromotionController {
     }
 
     public function deletePromotion() {
-        // Verificar se o ID da promoção foi fornecido
-        // Deletar a promoção utilizando o modelo Promotion
-        // Retornar um JSON com o status do resultado
+        if (isset($_POST['promotion_id'])) {
+            $promotionId = $_POST['promotion_id'];
+            
+            // Chamar o modelo para deletar a promoção
+            $result = $this->promotionModel->deletePromotion($promotionId);
+    
+            header('Content-Type: application/json');
+            if ($result) {
+                echo json_encode(['status' => 'success', 'message' => 'Promoção removida com sucesso.']);
+            } else {
+                echo json_encode(['status' => 'error', 'message' => 'Não foi possível remover a promoção.']);
+            }
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'ID da promoção não fornecido.']);
+        }
+        exit;
     }
 
     public function getPromotionById() {

@@ -45,22 +45,7 @@ class UserController {
             // ou retornar o tipo de usuário diretamente (Do jeito que está)
             return $userType;
             
-            // ou redirecionar com base no tipo de usuário
-            /*
-            switch ($userType) {
-                case 'admin':
-                    $this->view->renderView('/admin-dashboard');
-                    break;
-                case 'seller':
-                    $this->view->renderView('/seller-dashboard');
-                    break;
-                case 'client':
-                    $this->view->renderView('/client-dashboard');
-                    break;
-                default:
-                    $this->logout();
-            }
-            */
+
         } else {
             $this->view->renderView('/login');
         }

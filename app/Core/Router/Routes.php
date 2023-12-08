@@ -79,6 +79,10 @@ class Routes {
             '/promotion-add' => [
                 'class' => 'PromotionController',
                 'method' => 'addPromotion'
+            ],
+            '/delete-promotion' => [
+                'class' => 'PromotionController',
+                'method' => 'deletePromotion'
             ]
         ];
     }

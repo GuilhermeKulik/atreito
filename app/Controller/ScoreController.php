@@ -8,7 +8,8 @@ use Atreito\Config\DBConnection;
 class ScoreController {
 
     private $scoreModel;
-    
+    private $logScoreModel;
+
     /*
     public function __construct($user_id) {
         $this->scoreModel = new Score($user_id);
@@ -69,19 +70,18 @@ class ScoreController {
      */
     public function getRankingSeller() {
         try {
-            // Cria uma instância de LogScore com a conexão ao banco de dados
-            $logScoreModel = new LogScore(DBConnection::getInstance()->getConnection());
+
+            $this->logScoreModel = new LogScore();
             
             // Obtém o ranking dos vendedores para o mês atual
-            $sellerRanking = $logScoreModel->getSellersRankingThisMonth();
+            $sellerRanking = $this->logScoreModel->getSellersRankingThisMonth();
 
-            return ['status' => 'success', 'ranking' => $sellerRanking];
+            return $sellerRanking;
         } catch (Exception $e) {
             // Manipula exceções ocorridas e retorna uma mensagem de erro
-            return ['status' => 'error', 'message' => $e->getMessage()];
+            echo $e->getMessage();
         }
     }
-
 
     /**
      * Consume points from a user's score.

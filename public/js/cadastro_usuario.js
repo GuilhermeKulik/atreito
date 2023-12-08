@@ -20,7 +20,7 @@ $(document).ready(function() {
             if (response.status == 'success') {  // <- Trocado 'response.success' por 'response.status'
                 toastr.success("Usuário cadastrado com sucesso!");
                 setTimeout(function() {
-                    window.location.href = '/admin-dashboard';
+                    window.location.href = '/perfil';
                 }, 2000);
             } else {
                 // Exibe mensagem de erro recebida do servidor
