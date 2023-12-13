@@ -1,5 +1,8 @@
 Customer Loyalty Web Application with Gamification
-This repository contains a web application designed to enhance customer loyalty through gamification techniques. It's a dynamic and interactive platform where users can earn points, achieve levels, and redeem rewards.
+
+This repository contains a web application designed to enhance customer loyalty through gamification techniques.
+
+It's a dynamic and interactive platform where users can earn points, achieve levels, and redeem rewards.
 
 License
 This project is open-sourced under the GNU General Public License v3.0 (GPLv3). Feel free to use, modify, and distribute this software as per the license terms.
